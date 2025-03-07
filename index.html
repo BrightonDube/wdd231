@@ -3,15 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta description="description" content="This is the home page">
-    <meta name="author" content="Brighton">
+    <meta name="description" content="Brighton Dube's Course home page">
+    <meta name="author" content="Brighton Dube">
+    <title>Brighton Dube Courses</title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="small.css">
-    <link rel="stylesheet" href="larger.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
 </head>
 <body>
-    <header><span>Brighton Dube</span></header>
-    <h1>This is the home page</h1>
+
+    <header>
+        <img src="images/brighton.jpg" alt="Brighton Dube">
+        <h1><span>Brighton Dube</span></h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Chamber</a>
+        <a href="#">GitHub Profile</a>
+        <a href="#">LinkedIn</a>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section id="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li>...</li>
+                <li>...</li>
+                <li>...</li>
+            </ul>
+        </section>
+
+        <section id="toloria">
+            <h2>Cape Town, South Africa</h2>
+            <img src="images/table-mountain.jpg" alt="Table Mountain">
+            <p class="image-caption">Table Mountain</p>
+        </section>
+
+        <section id="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button data-filter="all">All</button>
+                <button data-filter="cse">CSE</button>
+                <button data-filter="wdd">WDD</button>
+            </div>
+
+            <div class="course-buttons">
+                <button data-course="cse110" data-category="cse">CSE 110</button>
+                <button data-course="wdd130" data-category="wdd">WDD 130</button>
+                <button data-course="cse111" data-category="cse">CSE 111</button>
+                <button data-course="cse210" data-category="cse">CSE 210</button>
+                <button data-course="wdd131" data-category="wdd">WDD 131</button>
+                <button data-course="wdd231" data-category="wdd">WDD 231</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentYear"></span> Brighton Dube South Africa
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/date.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/courses.js"></script>
+
 </body>
 </html>

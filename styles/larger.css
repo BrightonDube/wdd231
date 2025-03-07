@@ -1,0 +1,130 @@
+@media (min-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    header h1 {
+        font-size: 2.8em;
+        margin-bottom: 0;
+        text-align: center;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Apply to only the H1 in main */
+    main h1 {
+        text-align: left;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0m;
+        padding-bottom: 0;
+    }
+    h2 {
+        font-size: 2em;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75em 2em;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    nav a {
+        display: inline;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+        padding: 0 2em;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    section {
+        margin-bottom: 0;
+        border: 1px solid #eee;
+    }
+
+    #course-work {
+        grid-column: 1 / span 1;
+        max-width: 500px;
+    }
+
+    #cape-town {
+        grid-column: 2 / span 1;
+        max-width: 500px;
+    }
+
+    #certificate {
+        grid-column: 1 / span 2;
+    }
+
+    #certificate .filter-buttons {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    #certificate .filter-buttons button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 0.75em 1.5em;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0.25em;
+        transition: background-color 0.3s;
+        font-size: 1.1em;
+    }
+
+    #certificate .filter-buttons button:hover {
+        background-color: #c0392b;
+    }
+
+    #certificate .course-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #certificate .course-buttons button {
+        background-color: #f39c12;
+        color: white;
+        border: none;
+        padding: 0.75em 1.5em;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0.25em;
+        transition: background-color 0.3s;
+        width: calc(33.33% - 0.5em);
+        box-sizing: border-box;
+    }
+
+    #certificate .course-buttons button:hover {
+        background-color: #d35400;
+    }
+}

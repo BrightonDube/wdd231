@@ -12,13 +12,12 @@
         margin-right: 0;
     }
 
-    /* Apply to only the H1 in main */
     main h1 {
         text-align: left;
         padding-left: 0;
         margin-left: 0;
         margin-right: 0;
-        padding-top: 0m;
+        padding-top: 0em;
         padding-bottom: 0;
     }
     h2 {
@@ -90,7 +89,7 @@
     }
 
     #certificate .filter-buttons button {
-        background-color: #e74c3c;
+        background-color: #2c3e50;
         color: white;
         border: none;
         padding: 0.75em 1.5em;
@@ -102,7 +101,7 @@
     }
 
     #certificate .filter-buttons button:hover {
-        background-color: #c0392b;
+        background-color: black;
     }
 
     #certificate .course-buttons {
@@ -112,8 +111,8 @@
     }
 
     #certificate .course-buttons button {
-        background-color: #f39c12;
-        color: white;
+        background-color: #ecf0f1;
+        color: black;
         border: none;
         padding: 0.75em 1.5em;
         border-radius: 5px;
@@ -125,9 +124,16 @@
     }
 
     #certificate .course-buttons button:hover {
-        background-color: #d35400;
+        background-color: #d3d3d3;
+        color: black;
     }
+
     #certificate .course-buttons button.completed {
-        background-color: #2c3e50;
-        }
+        background-color: #95a5a6;
+        color: black;
+    }
+
+    #certificate .course-buttons button.completed:hover {
+        background-color: #7f8c8d;
+    }
 }

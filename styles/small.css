@@ -57,7 +57,8 @@ nav {
     background-color: #3498db;
     color: white;
     padding: 0.75em;
-     position: relative; 
+    position: relative;
+    min-height: 22px; 
 }
 
 nav ul {

@@ -76,20 +76,20 @@ const courses = [
         ],
         completed: false
     }
-]
+];
 
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-buttons button');
-    const courseButtonsContainer = document.querySelector('.course-buttons'); 
+    const courseButtonsContainer = document.querySelector('.course-buttons');
 
     function displayCourses(filteredCourses) {
-        courseButtonsContainer.innerHTML = ''; 
+        courseButtonsContainer.innerHTML = '';
 
         filteredCourses.forEach(course => {
             const button = document.createElement('button');
-            button.textContent = `${course.subject} ${course.number}`;
+            button.textContent = `${course.subject} ${course.number}`; 
             button.dataset.code = course.subject + course.number;
-            button.dataset.category = course.subject.toLowerCase(); 
+            button.dataset.category = course.subject.toLowerCase();
             button.classList.add('course-button');
 
             if (course.completed) {
@@ -98,12 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             courseButtonsContainer.appendChild(button);
         });
+      const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+ 
 
-        
-        const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-        const creditsElement = document.createElement('p');
+      if(filteredCourses.length)
+      {  const creditsElement = document.createElement('p');
         creditsElement.textContent = `Total Credits: ${totalCredits}`;
-        courseButtonsContainer.appendChild(creditsElement);
+        courseButtonsContainer.appendChild(creditsElement);}
     }
 
     displayCourses(courses);
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (filter === 'all') {
                 filteredCourses = courses;
             } else {
-                filteredCourses = courses.filter(course => course.subject.toLowerCase() === filter); 
+                filteredCourses = courses.filter(course => course.subject.toLowerCase() === filter);
             }
 
             displayCourses(filteredCourses);

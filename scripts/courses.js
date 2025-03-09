@@ -9,7 +9,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -22,7 +22,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -34,7 +34,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -46,7 +46,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -78,7 +78,6 @@ const courses = [
     }
 ]
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-buttons button');
     const courseButtonsContainer = document.querySelector('.course-buttons'); 
@@ -88,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         filteredCourses.forEach(course => {
             const button = document.createElement('button');
-            button.textContent = `${course.subject} ${course.number} - ${course.title} (${course.credits} credits)`;
+            button.textContent = `${course.subject} ${course.number}`;
             button.dataset.code = course.subject + course.number;
             button.dataset.category = course.subject.toLowerCase(); 
             button.classList.add('course-button');
@@ -107,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
         courseButtonsContainer.appendChild(creditsElement);
     }
 
-    // Initial display (All courses)
     displayCourses(courses);
 
     filterButtons.forEach(button => {

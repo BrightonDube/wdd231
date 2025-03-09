@@ -58,14 +58,14 @@ nav {
     color: white;
     padding: 0.75em;
     position: relative;
-    min-height: 22px; 
+    min-height: 48px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none; 
+    display: none;
 }
 
 nav a {
@@ -88,12 +88,17 @@ nav a[href="index.html"] {
 
 
 .hamburger {
-     display: block; 
+    display: block;
     cursor: pointer;
     padding: 0.5em;
     position: absolute;
     top: 0;
     right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger-line {
@@ -120,7 +125,7 @@ nav a[href="index.html"] {
 
 
 nav ul.open {
-    display: block;  
+    display: block;
 }
 
 
@@ -136,25 +141,25 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 #certificate .filter-buttons {
     margin-bottom: 1em;
     text-align: center;
 }
 
 #certificate .filter-buttons button {
-    background-color: #e74c3c;
+    background-color: #2c3e50; 
     color: white;
     border: none;
-    padding: 0.75em 1em;
+    padding: 0.75em 1.5em;
     border-radius: 5px;
     cursor: pointer;
     margin: 0.25em;
     transition: background-color 0.3s;
+    font-size: 1.1em;
 }
 
 #certificate .filter-buttons button:hover {
-    background-color: #c0392b;
+    background-color: black;
 }
 
 #certificate .course-buttons {
@@ -162,23 +167,31 @@ section {
 }
 
 #certificate .course-buttons button {
-    background-color: #f39c12;
-    color: white;
+    background-color: #ecf0f1; 
+    color: black;
     border: none;
-    padding: 0.75em 1em;
+    padding: 0.75em 1.5em;
     border-radius: 5px;
     cursor: pointer;
     margin: 0.25em;
     transition: background-color 0.3s;
+    width: calc(33.33% - 0.5em);
+    box-sizing: border-box;
 }
 
 #certificate .course-buttons button:hover {
-    background-color: #d35400;
+    background-color: #d3d3d3;
+    color: black;
 }
 
 
 #certificate .course-buttons button.completed {
-    background-color: #2c3e50;
+        background-color: #95a5a6; 
+    color: black;  
+    }
+
+#certificate .course-buttons button.completed:hover {
+    background-color: #7f8c8d; 
 }
 
 footer {

@@ -81,6 +81,7 @@ const courses = [
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-buttons button');
     const courseButtonsContainer = document.querySelector('.course-buttons');
+            const courseWorkSection = document.getElementById('course-work');
 
     function displayCourses(filteredCourses) {
         courseButtonsContainer.innerHTML = '';
@@ -106,21 +107,20 @@ document.addEventListener('DOMContentLoaded', function() {
         creditsElement.textContent = `Total Credits: ${totalCredits}`;
         courseButtonsContainer.appendChild(creditsElement);}
     }
+     function displayCoursework(courses) {
+      // New function to display courses in course work
+      const courseWorkList = document.createElement('ul');
 
-    displayCourses(courses);
+      courses.forEach(course => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${course.subject} ${course.number}: ${course.title}`;
+        courseWorkList.appendChild(listItem);
+      });
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.dataset.filter;
-            let filteredCourses = [];
+        courseWorkSection.appendChild(courseWorkList);
+    }
 
-            if (filter === 'all') {
-                filteredCourses = courses;
-            } else {
-                filteredCourses = courses.filter(course => course.subject.toLowerCase() === filter);
-            }
+     displayCourses(courses);
+     displayCoursework(courses);
 
-            displayCourses(filteredCourses);
-        });
-    });
 });

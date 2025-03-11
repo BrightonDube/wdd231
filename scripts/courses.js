@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
             courseButtonsContainer.appendChild(creditsElement);}
     }
     function displayCoursework(courses) {
-        // New function to display courses in course work
+        
         const courseWorkList = document.createElement('ul');
         courseWorkList.innerHTML = '';
 
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             displayCourses(filteredCourses);
-            displayCoursework(filteredCourses); // Update this line
+            displayCoursework(filteredCourses); 
         });
     });
      displayCourses(courses);

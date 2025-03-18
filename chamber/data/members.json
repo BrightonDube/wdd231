@@ -1,0 +1,74 @@
+[
+  {
+    "names": "Johannesburg Financial Solutions",
+    "addresses": "10 Diagonal Street, Johannesburg CBD, 2001",
+    "phone numbers": "+27 11 492 3000",
+    "website URLs": "www.jfinsolutions.co.za",
+    "image or icon file names": "jfs_logo.png",
+    "membership level": 3,
+    "other information": "Financial consulting and investment services for businesses and individuals."
+  },
+  {
+    "names": "Tech Innovators ZA",
+    "addresses": "2 Sandton Drive, Sandton, Johannesburg, 2196",
+    "phone numbers": "+27 11 784 5500",
+    "website URLs": "www.techinnovatorsza.com",
+    "image or icon file names": "tech_innovators_icon.jpg",
+    "membership level": 2,
+    "other information": "Software development, IT solutions, and technology consulting firm."
+  },
+  {
+    "names": "Rosebank Retail Emporium",
+    "addresses": "50 Bath Avenue, Rosebank, Johannesburg, 2196",
+    "phone numbers": "+27 11 447 9800",
+    "website URLs": "www.rosebankretail.com",
+    "image or icon file names": "rosebank_retail_storefront.png",
+    "membership level": 1,
+    "other information": "A department store offering a wide range of retail goods, from clothing to home appliances."
+  },
+  {
+    "names": "Golden Reef Mining Corp",
+    "addresses": "117 Fox Street, Marshalltown, Johannesburg, 2107",
+    "phone numbers": "+27 11 838 2100",
+    "website URLs": "www.goldenreefmining.co.za",
+    "image or icon file names": "golden_reef_mining_logo.svg",
+    "membership level": 3,
+    "other information": "Major mining company specializing in gold and platinum extraction and processing."
+  },
+  {
+    "names": "Jozi Adventures & Tours",
+    "addresses": "1 Jan Smuts Avenue, Braamfontein, Johannesburg, 2000",
+    "phone numbers": "+27 11 403 1234",
+    "website URLs": "www.joziadventures.com",
+    "image or icon file names": "jozi_adventures_icon.jpeg",
+    "membership level": 2,
+    "other information": "Tourism company providing guided tours and adventure experiences in and around Johannesburg."
+  },
+  {
+    "names": "Precision Engineering Solutions (Pty) Ltd",
+    "addresses": "48 Industria Road, Industria West, Johannesburg, 2093",
+    "phone numbers": "+27 11 474 6700",
+    "website URLs": "www.precisionengineeringza.co.za",
+    "image or icon file names": "precision_engineering_gear.png",
+    "membership level": 1,
+    "other information": "Specialized engineering firm offering precision manufacturing and machining services."
+  },
+  {
+    "names": "Strategic Growth Partners",
+    "addresses": "90 Rivonia Road, Sandton, Johannesburg, 2196",
+    "phone numbers": "+27 11 883 5600",
+    "website URLs": "www.strategicgrowthpartners.com",
+    "image or icon file names": "sgp_icon_consulting.gif",
+    "membership level": 2,
+    "other information": "Business consulting firm focused on strategic planning and organizational development."
+  },
+  {
+    "names": "BuildRight Construction Group",
+    "addresses": "33 Katherine Street, Sandown, Johannesburg, 2196",
+    "phone numbers": "+27 11 290 4000",
+    "website URLs": "www.buildrightgroup.co.za",
+    "image or icon file names": "buildright_construction_logo.png",
+    "membership level": 3,
+    "other information": "Large-scale construction company undertaking commercial and residential building projects."
+  }
+]

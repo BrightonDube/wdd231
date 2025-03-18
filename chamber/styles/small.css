@@ -30,12 +30,11 @@ footer.grid {
 }
 
 .contact-info {
-  align-items: flex-start;
-  text-align: left;
+  text-align: center;
 }
 .contact-info h3,
 .contact-info p {
-  text-align: left;
+  text-align: center;
 }
 
 #socials {

@@ -30,6 +30,21 @@ ul.menu-links li a {
     color: #fff;
     text-decoration: none;        
 }
+li.active a {
+    background-color: rgba(0,0,0,0.2);
+}
+ul.menu-links {
+    display: none;
+    list-style-type: none;
+}
+
+/*CSS for  the open class */
+nav-button.open::before {
+    content: "X";
+}
+ul.menu-links.open{
+    display: block;
+}
 
 /* footer */
 footer.grid {

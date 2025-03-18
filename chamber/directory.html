@@ -45,7 +45,8 @@
     />
     <script src="./scripts/date.js" defer></script>
     <script src="./scripts/navigation.js" defer></script>
-    <script src="./scripts/general.js" defer></script>
+    <script src="./scripts/directory.js" defer></script>
+    <script src="./scripts/gridtoggle.js" defer></script>
   </head>
   <body>
     <header>
@@ -69,31 +70,32 @@
     </nav>
 
     <main>
-      <h1>Directory</h1>
+      <h1>Business Directory</h1>
+      <div class="menu">
+        <button id="grid">⏹️Grid</button>
+        <button id="list">📄List</button>
+      </div>
+      <hr />
+      <article class="grid">
+        <section>
+          <img
+            src=""
+            alt=""
+          />
+          <p class="address"></p>
+          <p class="phone"></p>
 
-      <section>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut deleniti,
-        odio hic minus et iste tempora quo id asperiores at cumque. Sint ab iste
-        molestiae animi maiores temporibus, repudiandae nemo.
-      </section>
-
-      <section>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-        nostrum maxime dolores nesciunt ad vitae sit, maiores similique.
-        Cupiditate ex excepturi sint sed, debitis accusamus optio quasi deleniti
-        veritatis delectus.
-      </section>
-
-      <section>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa excepturi
-        exercitationem qui nobis ipsam hic dolor culpa accusantium obcaecati,
-        cumque aliquid officiis eos? Natus, sit praesentium magnam aliquid
-        excepturi sint.
-      </section>
+          <a
+            href=""
+            target="_blank"
+            class="link"
+          ></a>
+        </section>
+      </article>
     </main>
 
-    <footer class="grid">
-      <section class="foot contact-info">
+    <footer class="footer-grid">
+      <div class="foot contact-info">
         <h3>Johannesburg Chamber of Commerce</h3>
         <p>
           125 Daisy Street <br />
@@ -102,9 +104,9 @@
           <a href="mailto:info@joburgcc.org">info@joburgcc.org</a> <br />
           (011) 345-3456
         </p>
-      </section>
+      </div>
 
-      <section class="foot" id="socials">
+      <div class="foot" id="socials">
         <div class="social-icons-container">
           <a
             href="#"
@@ -128,9 +130,9 @@
             ><i class="fab fa-linkedin"></i
           ></a>
         </div>
-      </section>
+      </div>
 
-      <section class="foot copyright">
+      <div class="foot copyright">
         <p>
           WDD231 Class Project<br />
           Brighton Dube<br />
@@ -138,7 +140,7 @@
         </p>
 
         <p id="lastModified"></p>
-      </section>
+      </div>
     </footer>
   </body>
 </html>

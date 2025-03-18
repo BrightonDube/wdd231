@@ -25,29 +25,30 @@ nav {
   padding: 0.25rem 2vw;
 }
 ul.menu-links li a {
-    display: block;
-    padding: .75rem 2vw;
-    color: #fff;
-    text-decoration: none;        
+  display: block;
+  padding: 0.75rem 2vw;
+  color: #fff;
+  text-decoration: none;
 }
 li.active a {
-    background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 ul.menu-links {
-    display: none;
-    list-style-type: none;
+  display: none;
+  list-style-type: none;
 }
 
 /*CSS for  the open class */
 nav-button.open::before {
-    content: "X";
+  content: 'X';
 }
-ul.menu-links.open{
-    display: block;
+ul.menu-links.open {
+  display: block;
 }
 
+
 /* footer */
-footer.grid {
+footer.footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   background-color: #f0f0f0;

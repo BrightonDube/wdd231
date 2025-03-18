@@ -4,8 +4,33 @@ header span {
   font-weight: bold;
   background-color: #1da1f2;
   color: #fff;
-  padding: auto;
+  padding: 1em;
+  display: block;
+  text-align: center;
 }
+
+/* navigation */
+nav {
+  background-color: #1e638d;
+  padding: 1em;
+}
+#nav-button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem 2vw;
+}
+ul.menu-links li a {
+    display: block;
+    padding: .75rem 2vw;
+    color: #fff;
+    text-decoration: none;        
+}
+
 /* footer */
 footer.grid {
   display: grid;

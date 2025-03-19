@@ -3,62 +3,62 @@
     "names": "First National Bank (FNB)",
     "addresses": "1 First Place, Bank City, Johannesburg, 2001",
     "phone numbers": "+27 87 575 9404",
-    "website URLs": "https://www.fnb.co.za/",    
-    "image or icon file names": "../images/FNBLogo.png",
+    "website URLs": "https://www.fnb.co.za/",
+    "image or icon file names": "../images/fnblogo.png",
     "membership level": 3,
     "other information": "One of South Africa's largest banks, offering a wide range of financial services to individuals, businesses, and corporates."
   },
   {
     "names": "Eagle Solar",
-    "addresses": "The Campus, Twickenham Building, 57 Sloane Street, Bryanston, Johannesburg, 2191",
+    "addresses": "2 Rabie St, Vanderbijlpark, 1911",
     "phone numbers": "+27 11 575 0000",
-    "website URLs": "https://www.dimensiondata.com/en-za",
-    "image or icon file names": "https://www.eaglesolar.co.za/assets/img/navbar/Balck%20Logo.png",
+    "website URLs": "https://www.eaglesolar.co.za/",
+    "image or icon file names": "../images/eagle-solar.png",
     "membership level": 3,
-    "other information": "Global technology integrator and managed services provider, specializing in IT infrastructure, cloud, and cybersecurity solutions."
+    "other information": "South Africa's fastest-rising Solar Installer, Illuminating Alternatives energy solutions for the Future"
   },
   {
-    "names": "Sandton City Shopping Centre",
+    "names": "Market Kokoro",
     "addresses": "163 Rivonia Rd, Sandton, Johannesburg, 2196",
     "phone numbers": "+27 11 217 6000",
-    "website URLs": "https://www.sandtoncity.com/",
-    "image or icon file names": "https://www.sandtoncity.com/Content/SandtonCity/SandtonCity_SquareLogo.svg",
+    "website URLs": "https://marketkokoro.co.za/",
+    "image or icon file names": "../images/mkoroko.png",
     "membership level": 2,
-    "other information": "Luxury shopping centre in Sandton, Johannesburg, featuring a wide variety of retail stores, restaurants, and entertainment options."
+    "other information": "Market Kokoro brings you only the best, get to know more about the countries we import from such as South Korea, Japan and Thailand."
   },
   {
     "names": "Anglo American Platinum",
     "addresses": "55 Marshall Street, Johannesburg, 2001",
     "phone numbers": "+27 11 373 6111",
     "website URLs": "https://www.angloamericanplatinum.com/",
-    "image or icon file names": "https://www.angloamericanplatinum.com/~/media/Files/A/Anglo-American-Platinum-V2/images/logo/angloplat-logo.svg?la=en",
+    "image or icon file names": "../images/anglo-american-logo-white.svg",
     "membership level": 3,
     "other information": "World-leading primary producer of platinum group metals, playing a vital role in the mining industry in South Africa."
   },
   {
     "names": "City Sightseeing Johannesburg",
-    "addresses": "Gold Reef City Theme Park, Northern Parkway & Data Crescent, Ormonde, Johannesburg, 2159",
+    "addresses": "130 Oxford Rd, Melrose, Johannesburg, 2196",
     "phone numbers": "+27 11 492 6888",
     "website URLs": "https://www.citysightseeing.co.za/johannesburg",
-    "image or icon file names": "https://www.citysightseeing.co.za/media/wysiwyg/city-sightseeing-logo.svg",
+    "image or icon file names": "../images/sightseeing.jpg",
     "membership level": 2,
     "other information": "Open-top bus tour company offering hop-on hop-off tours of Johannesburg's major attractions and historical sites."
   },
   {
     "names": "Murray & Roberts",
-    "addresses": "Douglas Roberts Centre, 22 Skeen Boulevard, Bedfordview, Johannesburg, 2007",
+    "addresses": "22 Skeen Boulevard, Johannesburg, 2007",
     "phone numbers": "+27 11 456 6200",
     "website URLs": "https://www.murrob.com/",
-    "image or icon file names": "https://www.murrob.com/media/1708/mr-logo-2023-svg.svg",
+    "image or icon file names": "../images/murray-roberts_orig.png",
     "membership level": 3,
     "other information": "Multinational engineering and construction services company with a strong presence in South Africa and globally."
   },
   {
     "names": "Deloitte Southern Africa",
-    "addresses": "Deloitte Place, Waterfall City, 2 Waterfall Drive, Jukskei View, Johannesburg, 2090",
+    "addresses": "2 Waterfall Drive, Jukskei View, 2090",
     "phone numbers": "+27 11 209 6000",
-    "website URLs": "https://www2.deloitte.com/za/en.html",
-    "image or icon file names": "https://www2.deloitte.com/content/dam/assets/logos/deloitte.svg",
+    "website URLs": "https://www2.deloitte.com/za",
+    "image or icon file names": "../images/deloitte-logo-1024x416.jpg",
     "membership level": 3,
     "other information": "Part of the global Deloitte network, providing audit, consulting, financial advisory, risk management, and tax services in Southern Africa."
   },
@@ -67,7 +67,7 @@
     "addresses": "53 Wierda Rd E, Wierda Valley, Sandton, Johannesburg, 2196",
     "phone numbers": "+27 11 321 7200",
     "website URLs": "https://www.wbho.co.za/",
-    "image or icon file names": "https://the6ds.com/wp-content/uploads/2017/03/FNBLogo.png",
+    "image or icon file names": "../images/wbho-logo-white-2x.png",
     "membership level": 3,
     "other information": "One of the largest construction companies in Southern Africa, involved in diverse projects across building, civil engineering, and roads."
   }

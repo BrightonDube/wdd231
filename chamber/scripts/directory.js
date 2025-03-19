@@ -36,7 +36,7 @@ function displayMembers(members) {
     imgElement.alt = `Logo of ${member.names}`; // Set alt attribute
     //namesElement.textContent = member.names;
     addressElement.textContent = member.addresses;
-    phoneElement.textContent = `Phone: ${member['phone numbers']}`;
+    phoneElement.textContent = `${member['phone numbers']}`;
     linkElement.href = member['website URLs'];
     linkElement.textContent = `${member['website URLs']}`;
     // membershipElement.textContent = `Membership Level: ${getLevelName(

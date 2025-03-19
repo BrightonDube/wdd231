@@ -3,17 +3,17 @@
     "names": "First National Bank (FNB)",
     "addresses": "1 First Place, Bank City, Johannesburg, 2001",
     "phone numbers": "+27 87 575 9404",
-    "website URLs": "https://www.fnb.co.za/",
-    "image or icon file names": "https://www.fnb.co.za/0/assets/images/fnb-logo.svg",
+    "website URLs": "https://www.fnb.co.za/",    
+    "image or icon file names": "../images/FNBLogo.png",
     "membership level": 3,
     "other information": "One of South Africa's largest banks, offering a wide range of financial services to individuals, businesses, and corporates."
   },
   {
-    "names": "Dimension Data",
+    "names": "Eagle Solar",
     "addresses": "The Campus, Twickenham Building, 57 Sloane Street, Bryanston, Johannesburg, 2191",
     "phone numbers": "+27 11 575 0000",
     "website URLs": "https://www.dimensiondata.com/en-za",
-    "image or icon file names": "https://www.dimensiondata.com/dd-global-theme/images/dimensiondata/logo.svg",
+    "image or icon file names": "https://www.eaglesolar.co.za/assets/img/navbar/Balck%20Logo.png",
     "membership level": 3,
     "other information": "Global technology integrator and managed services provider, specializing in IT infrastructure, cloud, and cybersecurity solutions."
   },

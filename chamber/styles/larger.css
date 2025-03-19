@@ -1,3 +1,16 @@
+@media only screen and (min-width: 38rem) {
+  #nav-button {
+    display: none;
+  }
+  ul.menu-links, ul.menu-links.open {
+    display: flex;
+    justify-content: flex-end;
+  }
+  ul.menu-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+}
+
 /* Main Content */
 main {
   margin: 0 auto;
@@ -17,6 +30,17 @@ main {
 .menu button {
   padding: 1rem;
   font-weight: 700;
+}
+
+.template-section {
+  display: none;
+}
+section p,
+section h3,
+section a {
+  /* Apply to text elements in sections */
+  word-wrap: break-word; /* For long words that don't naturally break */
+  overflow-wrap: break-word; /* Alternative for similar effect */
 }
 
 section {
@@ -52,7 +76,7 @@ section {
 
 .list section {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr;
   margin: 0;
   padding: 0.25rem;
 }
@@ -94,12 +118,3 @@ img {
   height: 75px;
   max-width: 100%;
 }
-.template-section {
-  display: none;
-}
-section p, section h3, section a { /* Apply to text elements in sections */
-  word-wrap: break-word;       /* For long words that don't naturally break */
-  overflow-wrap: break-word;  /* Alternative for similar effect */
-}
-
-

@@ -1,18 +1,31 @@
 /* header */
-header span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  background-color: #1da1f2;
+header {
+  padding: 1rem;
   color: #fff;
-  padding: 1em;
-  display: block;
-  text-align: center;
+  background-color: #1da1f2;
+  display: grid;
+  grid-template-columns: 120px auto 44px;
+  align-items: center;
+}
+#logo {
+  font-family: 'Arial Black', sans-serif; /* Bold, classic font */
+  font-size: 2.5em; /* Adjust size as needed */
+  font-weight: bold;
+  color: #fff; /* Deep blue - professional and trustworthy */
+  letter-spacing: -0.05em; /* Slightly tighter letter spacing */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 0.2em 0.5em; /* Padding around the text */
+  /* border: 2px solid #224574; Border to frame the logo */
+  border-radius: 0.3em; /* Slightly rounded corners */
+  display: inline-block; /* Treat as inline-block for layout flexibility */
 }
 
 /* navigation */
 nav {
   background-color: #1e638d;
-  padding: 1em;
+}
+#nav-button::before {
+  content: '☰';
 }
 #nav-button {
   font-size: 2rem;
@@ -21,7 +34,7 @@ nav {
   color: #fff;
   cursor: pointer;
   width: 100%;
-  text-align: left;
+  text-align: right;
   padding: 0.25rem 2vw;
 }
 ul.menu-links li a {
@@ -39,11 +52,12 @@ ul.menu-links {
 }
 
 /*CSS for  the open class */
-nav-button.open::before {
+#nav-button.open::before {
   content: 'X';
 }
 ul.menu-links.open {
   display: block;
+  margin: 0;
 }
 
 /* footer */

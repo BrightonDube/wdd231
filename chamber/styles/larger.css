@@ -94,3 +94,12 @@ img {
   height: 75px;
   max-width: 100%;
 }
+.template-section {
+  display: none;
+}
+section p, section h3, section a { /* Apply to text elements in sections */
+  word-wrap: break-word;       /* For long words that don't naturally break */
+  overflow-wrap: break-word;  /* Alternative for similar effect */
+}
+
+

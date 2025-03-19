@@ -1,8 +1,8 @@
 /* header */
 header {
   padding: 1rem;
-  color: #fff;
-  background-color: #1da1f2;
+  color: #0b0b0b;
+  background-color: #76c1ef;
   display: grid;
   grid-template-columns: 120px auto 44px;
   align-items: center;
@@ -11,7 +11,7 @@ header {
   font-family: 'Arial Black', sans-serif; /* Bold, classic font */
   font-size: 2.5em; /* Adjust size as needed */
   font-weight: bold;
-  color: #fff; /* Deep blue - professional and trustworthy */
+  color: #0b0b0b; /* Deep blue - professional and trustworthy */
   letter-spacing: -0.05em; /* Slightly tighter letter spacing */
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   padding: 0.2em 0.5em; /* Padding around the text */
@@ -22,7 +22,7 @@ header {
 
 /* navigation */
 nav {
-  background-color: #1e638d;
+  background-color: #93c2df;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-out;
@@ -42,7 +42,7 @@ nav.open {
   font-size: 2rem;
   background: none;
   border: none;
-  color: #fff;
+  color: #0b0b0b;
   cursor: pointer;
   width: 100%;
   text-align: right;
@@ -51,11 +51,11 @@ nav.open {
 ul.menu-links li a {
   display: block;
   padding: 0.75rem 2vw;
-  color: #fff;
+  color: #0b0b0b;
   text-decoration: none;
 }
 li.active a {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 ul.menu-links {
   list-style-type: none;

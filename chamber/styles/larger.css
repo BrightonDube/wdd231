@@ -2,12 +2,16 @@
   #nav-button {
     display: none;
   }
-  ul.menu-links, ul.menu-links.open {
+  ul.menu-links,
+  ul.menu-links.open {
     display: flex;
     justify-content: flex-end;
   }
   ul.menu-links a:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  nav {
+    grid-template-rows: 1fr;
   }
 }
 

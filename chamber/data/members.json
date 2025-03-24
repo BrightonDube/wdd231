@@ -6,7 +6,7 @@
     "website URLs": "https://www.fnb.co.za/",
     "image or icon file names": "../images/fnblogo.png",
     "membership level": 3,
-    "other information": "One of South Africa's largest banks, offering a wide range of financial services to individuals, businesses, and corporates."
+    "tagline": "Helping you help yourself. For a better world."
   },
   {
     "names": "Eagle Solar",
@@ -15,7 +15,7 @@
     "website URLs": "https://www.eaglesolar.co.za/",
     "image or icon file names": "../images/eagle-solar.png",
     "membership level": 3,
-    "other information": "South Africa's fastest-rising Solar Installer, Illuminating Alternatives energy solutions for the Future"
+    "tagline": "Illuminating Alternatives energy solutions for the Future."
   },
   {
     "names": "Market Kokoro",
@@ -24,7 +24,7 @@
     "website URLs": "https://marketkokoro.co.za/",
     "image or icon file names": "../images/mkoroko.png",
     "membership level": 2,
-    "other information": "Market Kokoro brings you only the best, get to know more about the countries we import from such as South Korea, Japan and Thailand."
+    "tagline": "Bringing you the best from South Korea, Japan and Thailand."
   },
   {
     "names": "Anglo American Platinum",
@@ -33,7 +33,7 @@
     "website URLs": "https://www.angloamericanplatinum.com/",
     "image or icon file names": "../images/anglo-american-logo-white.svg",
     "membership level": 3,
-    "other information": "World-leading primary producer of platinum group metals, playing a vital role in the mining industry in South Africa."
+    "tagline": "World-leading primary producer of platinum group metals."
   },
   {
     "names": "City Sightseeing Johannesburg",
@@ -42,7 +42,7 @@
     "website URLs": "https://www.citysightseeing.co.za/johannesburg",
     "image or icon file names": "../images/sightseeing.jpg",
     "membership level": 2,
-    "other information": "Open-top bus tour company offering hop-on hop-off tours of Johannesburg's major attractions and historical sites."
+    "tagline": "Hop-on hop-off tours of Johannesburg's major attractions."
   },
   {
     "names": "Murray & Roberts",
@@ -51,7 +51,7 @@
     "website URLs": "https://www.murrob.com/",
     "image or icon file names": "../images/murray-roberts_orig.png",
     "membership level": 3,
-    "other information": "Multinational engineering and construction services company with a strong presence in South Africa and globally."
+    "tagline": "Multinational engineering and construction services."
   },
   {
     "names": "Deloitte Southern Africa",
@@ -60,7 +60,7 @@
     "website URLs": "https://www2.deloitte.com/za",
     "image or icon file names": "../images/deloitte-logo-1024x416.jpg",
     "membership level": 3,
-    "other information": "Part of the global Deloitte network, providing audit, consulting, financial advisory, risk management, and tax services in Southern Africa."
+    "tagline": "Audit, consulting, and financial advisory services."
   },
   {
     "names": "WBHO Construction (Pty) Ltd",
@@ -69,6 +69,6 @@
     "website URLs": "https://www.wbho.co.za/",
     "image or icon file names": "../images/wbho-logo-white-2x.png",
     "membership level": 3,
-    "other information": "One of the largest construction companies in Southern Africa, involved in diverse projects across building, civil engineering, and roads."
+    "tagline": "One of the largest construction companies in Southern Africa."
   }
 ]

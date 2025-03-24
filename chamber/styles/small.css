@@ -147,7 +147,7 @@ ul.menu-links.open {
 
 /* Top Sections */
 .main-container {
-  padding: 0 40px;
+  padding:0 20px;
 }
 #top-sections {
   display: grid;
@@ -155,7 +155,17 @@ ul.menu-links.open {
   gap: 20px;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 37.9rem) { /* Apply styles for screens smaller than 38rem */
+  #top-sections {
+    grid-template-columns: 1fr; /* Change to single column layout for small screens */
+  }
 
+  #events,
+  #current-weather,
+  #weather-forecast {
+    margin-bottom: 20px; /* Add some margin between stacked sections */
+  }
+}
 #events,
 #current-weather,
 #weather-forecast {
@@ -164,12 +174,7 @@ ul.menu-links.open {
   border-radius: 5px;
   background-color: #f9f9f9;
 }
-#current-weather {
-  display: grid; 
-  grid-template-columns: auto 1fr; 
-  align-items: center; 
-  gap: 10px; 
-}
+
 #current-weather .weather-icon {
   margin-bottom: 10px;
 }
@@ -187,24 +192,23 @@ ul.menu-links.open {
 }
 
 .business-card {
- 
   border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-  text-align: left; /* Changed to left align */
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
-  display: grid; /* Make business-card a grid container */
-  grid-template-columns: auto 1fr; /* Image column and text column */
-  gap: 15px; /* Spacing between image and text columns */
-  align-items: start; /* Align items at the start (top) of the grid area */
+  padding: 0;
+  border-radius: 10px; 
+  background-color: #f0f0f0; 
+  text-align: left; 
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1); 
 }
 
 .business-card h3 {
-  font-size: 1.3em; /* Slightly larger Business Name */
-  margin-bottom: 0;
-  font-weight: bold; /* Bold Business Name */
-  color: #333; /* Darker text for Business Name */
+  font-size: 1.3em; 
+  margin-bottom: 5px;
+  font-weight: bold; 
+  color: #333; 
+   
+}
+.business-card>h3 {
+  text-align: center;
 }
 
 .business-card .tagline {
@@ -212,43 +216,51 @@ ul.menu-links.open {
   color: #666; 
   margin-bottom: 15px; 
   font-size: 1em; 
+  
 }
 
 .business-card .business-image-placeholder {
-  width: 120px; 
+  margin-left: 15px;
+  width: 150px; 
   height: 150px; 
   background-color: #ddd; 
   border: 1px solid #ccc; 
-  margin-bottom: 0;
+  margin-bottom: 15px; 
   border-radius: 5px;
   background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)),
                       linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
   background-size: 20px 20px; 
 }
 
-.business-card p {
-  margin: 5px 0; 
+.business-card>p {
+  margin: 8px 0; 
   font-size: 0.95em; 
   color: #444;
-  margin-bottom: 2px; 
+  text-align: center; 
+}
+.card-info {
+  display: flex;
+  gap : 10px;
+  padding-top: 10px;
+  border-top: solid 1px rgba(0, 0, 0, 0.2);  
 }
 
 .business-card .email,
 .business-card .phone,
 .business-card .url {
   font-size: 0.9em;
-  color: #333; 
-  margin-top: 0;
-  margin-bottom: 2px; 
+  color: #333; /* Muted color for contact details */
+  margin-top: 0; /* Less top margin */
+  margin-bottom: 4px; /* Slightly more bottom margin */
 }
 
 .business-card .url {
-  text-decoration: none; 
-  color: navy;              
+  text-decoration: none; /* No underline for URLs initially */
+  color: navy;              /* Navy color for URLs */
 }
 
 .business-card .url:hover {
-  text-decoration: underline; 
+  text-decoration: underline; /* Underline on hover */
 }
 
 /* footer */

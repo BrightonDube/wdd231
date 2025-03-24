@@ -88,6 +88,130 @@ ul.menu-links.open {
   margin: 0;
 }
 
+/*Main*/
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Top Sections */
+
+#top-sections {
+  display: grid; 
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px; 
+}
+
+#events,
+#current-weather,
+#weather-forecast {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#current-weather .weather-icon {
+  margin-bottom: 10px;
+}
+
+#current-weather .weather-details p,
+#weather-forecast .forecast-day p {
+  margin: 5px 0;
+}
+
+#business-cards {
+  display: grid; /* Apply grid layout to #business-cards */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive business cards */
+  gap: 20px;
+}
+
+.business-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.business-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.business-card .tagline {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.business-card .business-image-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: #eee;
+  border: 1px dashed #ccc;
+  margin: 0 auto 10px;
+  border-radius: 5px;
+}
+
+.business-card p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.business-card .email,
+.business-card .phone,
+.business-card .url {
+}
+
 /* footer */
 footer.footer-grid {
   display: grid;
@@ -159,55 +283,4 @@ footer.footer-grid {
 
 .copyright {
   text-align: center;
-}
-
-#hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#hero > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.hero-content h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.button:hover {
-  background-color: #0056b3;
 }

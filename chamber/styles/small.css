@@ -145,3 +145,54 @@ footer.footer-grid {
 .copyright {
   text-align: center;
 }
+
+#hero {
+  position: relative; /* Needed for absolute positioning of hero-content */
+  width: 100%;
+  height: 100vh; /* Full viewport height for the hero section */
+  overflow: hidden; /* To contain the image within the hero div */
+}
+
+#hero > img {
+  width: 100%;
+  height: 100%; /* Image also takes full height of hero section */
+  object-fit: cover; /* Ensure image covers the entire area, cropping if needed */
+  object-position: center; /* Center the image within its container */
+  display: block; /* Remove any default inline spacing below the image */
+}
+
+.hero-content {
+  position: absolute; /* Overlay the content on top of the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center content both horizontally and vertically */
+  text-align: center; /* Center text within hero-content */
+  color: white; /* Default text color for hero content */
+  padding: 20px; /* Add some padding around the text */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for content */
+  border-radius: 10px; /* Optional: Rounded corners for content background */
+}
+
+.hero-content h1 {
+  font-size: 2.5em; /* Adjust as needed */
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2em; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Example button color - adjust to your theme */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}

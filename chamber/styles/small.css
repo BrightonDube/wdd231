@@ -154,7 +154,7 @@ h1 {
 
 /* Top Sections */
 .main-container {
-  padding:0 20px;
+  padding:20px;
 }
 #top-sections {
   display: grid;
@@ -228,15 +228,12 @@ h1 {
 
 .business-card .business-image-placeholder {
   margin-left: 15px;
-  /* width: 150px; 
-  height: 150px;  */
-  /* background-color: #ddd;  */
-  /* border: 1px solid #ccc;  */
-  margin-bottom: 15px; 
-  /* border-radius: 5px; */
-  /* background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)),
-                      linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)); */
+  min-width: 100px;
    
+}
+.business-image-placeholder>img {
+  max-height: 100px;
+  width: auto;
 }
 
 .business-card>p {

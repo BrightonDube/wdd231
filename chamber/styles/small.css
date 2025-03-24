@@ -1,23 +1,22 @@
 body {
-  margin: 0; /* Reset default body margin (normalize.css also does this) */
-  padding: 0; /* Reset default body padding */
-  overflow-x: hidden; /* **Crucial: Prevent horizontal scrollbar** */
-  font-family: 'Poppins', sans-serif; /* Set your base font-family */
-  box-sizing: border-box; /* Apply border-box model */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  /* Apply border-box to all elements and pseudo-elements */
   box-sizing: inherit;
 }
+
 :root {
-  /* Or target a specific element if needed */
-  --fa-animation-delay: 0.5s; /* Example delay value */
-  --fa-rotate-angle: 30deg; /* Example rotation angle */
+  --fa-animation-delay: 0.5s;
+  --fa-rotate-angle: 30deg;
 }
-/* header */
+
 header {
   padding: 1rem;
   color: #0b0b0b;
@@ -26,30 +25,31 @@ header {
   grid-template-columns: 120px auto 44px;
   align-items: center;
 }
+
 #logo {
-  font-family: 'Arial Black', sans-serif; /* Bold, classic font */
-  font-size: 2.5em; /* Adjust size as needed */
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.5em;
   font-weight: bold;
-  color: #0b0b0b; /* Deep blue - professional and trustworthy */
-  letter-spacing: -0.05em; /* Slightly tighter letter spacing */
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  padding: 0.2em 0.5em; /* Padding around the text */
-  /* border: 2px solid #224574; Border to frame the logo */
-  border-radius: 0.3em; /* Slightly rounded corners */
-  display: inline-block; /* Treat as inline-block for layout flexibility */
+  color: #0b0b0b;
+  letter-spacing: -0.05em;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  padding: 0.2em 0.5em;
+  border-radius: 0.3em;
+  display: inline-block;
 }
 
-/* navigation */
 nav {
   background-color: #93c2df;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-out;
 }
+
 nav ul {
   overflow: hidden;
   padding-inline-start: 0;
 }
+
 nav.open {
   grid-template-rows: 1fr;
 }
@@ -57,6 +57,7 @@ nav.open {
 #nav-button::before {
   content: '☰';
 }
+
 #nav-button {
   font-size: 2rem;
   background: none;
@@ -67,23 +68,26 @@ nav.open {
   text-align: right;
   padding: 0.25rem 2vw;
 }
+
 ul.menu-links li a {
   display: block;
   padding: 0.75rem 2vw;
   color: #0b0b0b;
   text-decoration: none;
 }
+
 li.active a {
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 ul.menu-links {
   list-style-type: none;
 }
 
-/*CSS for  the open class */
 #nav-button.open::before {
   content: 'X';
 }
+
 ul.menu-links.open {
   margin: 0;
 }
@@ -142,12 +146,14 @@ ul.menu-links.open {
 }
 
 /* Top Sections */
-
+.main-container {
+  padding: 0 40px;
+}
 #top-sections {
-  display: grid; 
+  display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 20px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 #events,
@@ -158,7 +164,12 @@ ul.menu-links.open {
   border-radius: 5px;
   background-color: #f9f9f9;
 }
-
+#current-weather {
+  display: grid; 
+  grid-template-columns: auto 1fr; 
+  align-items: center; 
+  gap: 10px; 
+}
 #current-weather .weather-icon {
   margin-bottom: 10px;
 }
@@ -169,47 +180,75 @@ ul.menu-links.open {
 }
 
 #business-cards {
-  display: grid; /* Apply grid layout to #business-cards */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive business cards */
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .business-card {
+ 
   border: 1px solid #ccc;
   padding: 15px;
-  border-radius: 5px;
-  background-color: #fff;
-  text-align: center;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  text-align: left; /* Changed to left align */
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  display: grid; /* Make business-card a grid container */
+  grid-template-columns: auto 1fr; /* Image column and text column */
+  gap: 15px; /* Spacing between image and text columns */
+  align-items: start; /* Align items at the start (top) of the grid area */
 }
 
 .business-card h3 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-size: 1.3em; /* Slightly larger Business Name */
+  margin-bottom: 0;
+  font-weight: bold; /* Bold Business Name */
+  color: #333; /* Darker text for Business Name */
 }
 
 .business-card .tagline {
   font-style: italic;
-  color: #777;
-  margin-bottom: 10px;
+  color: #666; 
+  margin-bottom: 15px; 
+  font-size: 1em; 
 }
 
 .business-card .business-image-placeholder {
-  width: 80px;
-  height: 80px;
-  background-color: #eee;
-  border: 1px dashed #ccc;
-  margin: 0 auto 10px;
+  width: 120px; 
+  height: 150px; 
+  background-color: #ddd; 
+  border: 1px solid #ccc; 
+  margin-bottom: 0;
   border-radius: 5px;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)),
+                      linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
+  background-size: 20px 20px; 
 }
 
 .business-card p {
-  margin: 5px 0;
-  font-size: 0.9em;
+  margin: 5px 0; 
+  font-size: 0.95em; 
+  color: #444;
+  margin-bottom: 2px; 
 }
 
 .business-card .email,
 .business-card .phone,
 .business-card .url {
+  font-size: 0.9em;
+  color: #333; 
+  margin-top: 0;
+  margin-bottom: 2px; 
+}
+
+.business-card .url {
+  text-decoration: none; 
+  color: navy;              
+}
+
+.business-card .url:hover {
+  text-decoration: underline; 
 }
 
 /* footer */

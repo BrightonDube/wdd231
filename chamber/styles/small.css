@@ -1,3 +1,17 @@
+body {
+  margin: 0; /* Reset default body margin (normalize.css also does this) */
+  padding: 0; /* Reset default body padding */
+  overflow-x: hidden; /* **Crucial: Prevent horizontal scrollbar** */
+  font-family: 'Poppins', sans-serif; /* Set your base font-family */
+  box-sizing: border-box; /* Apply border-box model */
+}
+
+*,
+*::before,
+*::after {
+  /* Apply border-box to all elements and pseudo-elements */
+  box-sizing: inherit;
+}
 :root {
   /* Or target a specific element if needed */
   --fa-animation-delay: 0.5s; /* Example delay value */
@@ -77,7 +91,7 @@ ul.menu-links.open {
 /* footer */
 footer.footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   background-color: #f0f0f0;
   color: #333;
   padding: 2rem;
@@ -135,58 +149,59 @@ footer.footer-grid {
   transform: scale(1.1);
 }
 .social-icon.linkedin img {
-  filter: invert(33%) sepia(64%) saturate(2332%) hue-rotate(192deg) brightness(92%) contrast(94%); /* Approximate LinkedIn Blue from Black */
+  filter: invert(33%) sepia(64%) saturate(2332%) hue-rotate(192deg)
+    brightness(92%) contrast(94%);
 }
 .social-icon.youtube img {
-  filter: invert(16%) sepia(98%) saturate(7492%) hue-rotate(1deg) brightness(98%) contrast(117%); /* Approximate YouTube Red from Black */
+  filter: invert(16%) sepia(98%) saturate(7492%) hue-rotate(1deg)
+    brightness(98%) contrast(117%);
 }
-
 
 .copyright {
   text-align: center;
 }
 
 #hero {
-  position: relative; /* Needed for absolute positioning of hero-content */
+  position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height for the hero section */
-  overflow: hidden; /* To contain the image within the hero div */
+  height: 100vh;
+  overflow: hidden;
 }
 
 #hero > img {
   width: 100%;
-  height: 100%; /* Image also takes full height of hero section */
-  object-fit: cover; /* Ensure image covers the entire area, cropping if needed */
-  object-position: center; /* Center the image within its container */
-  display: block; /* Remove any default inline spacing below the image */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .hero-content {
-  position: absolute; /* Overlay the content on top of the image */
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center content both horizontally and vertically */
-  text-align: center; /* Center text within hero-content */
-  color: white; /* Default text color for hero content */
-  padding: 20px; /* Add some padding around the text */
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for content */
-  border-radius: 10px; /* Optional: Rounded corners for content background */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .hero-content h1 {
-  font-size: 2.5em; /* Adjust as needed */
+  font-size: 2.5em;
   margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 1.2em; /* Adjust as needed */
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Example button color - adjust to your theme */
+  background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -194,5 +209,5 @@ footer.footer-grid {
 }
 
 .button:hover {
-  background-color: #0056b3; /* Darker color on hover */
+  background-color: #0056b3;
 }

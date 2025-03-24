@@ -1,3 +1,8 @@
+:root {
+  /* Or target a specific element if needed */
+  --fa-animation-delay: 0.5s; /* Example delay value */
+  --fa-rotate-angle: 30deg; /* Example rotation angle */
+}
 /* header */
 header {
   padding: 1rem;

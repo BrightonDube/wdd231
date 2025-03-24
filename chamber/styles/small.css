@@ -134,18 +134,13 @@ footer.footer-grid {
 .social-icon:hover {
   transform: scale(1.1);
 }
-
-.youtube {
-  color: #ff0000;
+.social-icon.linkedin img {
+  filter: invert(33%) sepia(64%) saturate(2332%) hue-rotate(192deg) brightness(92%) contrast(94%); /* Approximate LinkedIn Blue from Black */
+}
+.social-icon.youtube img {
+  filter: invert(16%) sepia(98%) saturate(7492%) hue-rotate(1deg) brightness(98%) contrast(117%); /* Approximate YouTube Red from Black */
 }
 
-.twitter {
-  color: #1da1f2;
-}
-
-.linkedin {
-  color: #0077b5;
-}
 
 .copyright {
   text-align: center;

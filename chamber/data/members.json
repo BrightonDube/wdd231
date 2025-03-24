@@ -4,7 +4,7 @@
     "addresses": "1 First Place, Bank City, Johannesburg, 2001",
     "phone numbers": "+27 87 575 9404",
     "website URLs": "https://www.fnb.co.za/",
-    "image or icon file names": "../images/fnblogo.png",
+    "image or icon file names": "./images/fnblogo.png",
     "membership level": 3,
     "tagline": "Helping you help yourself. For a better world."
   },
@@ -13,7 +13,7 @@
     "addresses": "2 Rabie St, Vanderbijlpark, 1911",
     "phone numbers": "+27 11 575 0000",
     "website URLs": "https://www.eaglesolar.co.za/",
-    "image or icon file names": "../images/eagle-solar.png",
+    "image or icon file names": "./images/eagle-solar.png",
     "membership level": 3,
     "tagline": "Illuminating Alternatives energy solutions for the Future."
   },
@@ -22,7 +22,7 @@
     "addresses": "163 Rivonia Rd, Sandton, Johannesburg, 2196",
     "phone numbers": "+27 11 217 6000",
     "website URLs": "https://marketkokoro.co.za/",
-    "image or icon file names": "../images/mkoroko.png",
+    "image or icon file names": "./images/mkoroko.png",
     "membership level": 2,
     "tagline": "Bringing you the best from South Korea, Japan and Thailand."
   },
@@ -31,7 +31,7 @@
     "addresses": "55 Marshall Street, Johannesburg, 2001",
     "phone numbers": "+27 11 373 6111",
     "website URLs": "https://www.angloamericanplatinum.com/",
-    "image or icon file names": "../images/anglo-american-logo-white.svg",
+    "image or icon file names": "./images/anglo-american-logo-white.svg",
     "membership level": 3,
     "tagline": "World-leading primary producer of platinum group metals."
   },
@@ -40,7 +40,7 @@
     "addresses": "130 Oxford Rd, Melrose, Johannesburg, 2196",
     "phone numbers": "+27 11 492 6888",
     "website URLs": "https://www.citysightseeing.co.za/johannesburg",
-    "image or icon file names": "../images/sightseeing.jpg",
+    "image or icon file names": "./images/sightseeing.jpg",
     "membership level": 2,
     "tagline": "Hop-on hop-off tours of Johannesburg's major attractions."
   },
@@ -49,7 +49,7 @@
     "addresses": "22 Skeen Boulevard, Johannesburg, 2007",
     "phone numbers": "+27 11 456 6200",
     "website URLs": "https://www.murrob.com/",
-    "image or icon file names": "../images/murray-roberts_orig.png",
+    "image or icon file names": "./images/murray-roberts_orig.png",
     "membership level": 3,
     "tagline": "Multinational engineering and construction services."
   },
@@ -58,7 +58,7 @@
     "addresses": "2 Waterfall Drive, Jukskei View, 2090",
     "phone numbers": "+27 11 209 6000",
     "website URLs": "https://www2.deloitte.com/za",
-    "image or icon file names": "../images/deloitte-logo-1024x416.jpg",
+    "image or icon file names": "./images/deloitte-logo-1024x416.jpg",
     "membership level": 3,
     "tagline": "Audit, consulting, and financial advisory services."
   },
@@ -67,7 +67,7 @@
     "addresses": "53 Wierda Rd E, Wierda Valley, Sandton, Johannesburg, 2196",
     "phone numbers": "+27 11 321 7200",
     "website URLs": "https://www.wbho.co.za/",
-    "image or icon file names": "../images/wbho-logo-white-2x.png",
+    "image or icon file names": "./images/wbho-logo-white-2x.png",
     "membership level": 3,
     "tagline": "One of the largest construction companies in Southern Africa."
   }

@@ -32,7 +32,7 @@ function displayMembers(members) {
     // const membershipElement = section.querySelector('.membership');
     // const otherInfoElement = section.querySelector('.other-info');
 
-    imgElement.src = `images/${member['image or icon file names']}`; // Set image source
+    imgElement.src = `${member['image or icon file names']}`; // Set image source
     imgElement.alt = `Logo of ${member.names}`; // Set alt attribute
     //namesElement.textContent = member.names;
     addressElement.textContent = member.addresses;

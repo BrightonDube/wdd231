@@ -121,7 +121,6 @@ ul.menu-links.open {
   border-radius: 10px;
 }
 
-
 h1 {
   font-size: 2em;
   margin: 0.67em 1rem;
@@ -154,7 +153,7 @@ h1 {
 
 /* Top Sections */
 .main-container {
-  padding:20px;
+  padding: 20px;
 }
 #top-sections {
   display: grid;
@@ -162,15 +161,15 @@ h1 {
   gap: 20px;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 37.9rem) { /* Apply styles for screens smaller than 38rem */
+@media only screen and (max-width: 37.9rem) {
   #top-sections {
-    grid-template-columns: 1fr; /* Change to single column layout for small screens */
+    grid-template-columns: 1fr;
   }
 
   #events,
   #current-weather,
   #weather-forecast {
-    margin-bottom: 20px; /* Add some margin between stacked sections */
+    margin-bottom: 20px;
   }
 }
 #events,
@@ -192,7 +191,7 @@ h1 {
 }
 
 #business-cards {
-  display: grid; 
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-bottom: 20px;
@@ -201,70 +200,67 @@ h1 {
 .business-card {
   border: 1px solid #ccc;
   padding: 0;
-  border-radius: 10px; 
-  background-color: #f0f0f0; 
-  text-align: left; 
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.1); 
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  text-align: left;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .business-card h3 {
-  font-size: 1.3em; 
+  font-size: 1.3em;
   margin-bottom: 5px;
-  font-weight: bold; 
-  color: #333; 
-   
+  font-weight: bold;
+  color: #333;
 }
-.business-card>h3 {
+.business-card > h3 {
   text-align: center;
 }
 
 .business-card .tagline {
   font-style: italic;
-  color: #111; 
-  margin-bottom: 15px; 
-  font-size: 1em; 
-  
+  color: #111;
+  margin-bottom: 15px;
+  font-size: 1em;
 }
 
 .business-card .business-image-placeholder {
   margin-left: 15px;
   min-width: 100px;
-   
 }
-.business-image-placeholder>img {
+.business-image-placeholder > img {
   max-height: 100px;
   width: auto;
 }
 
-.business-card>p {
-  margin: 8px 0; 
-  font-size: 0.95em; 
+.business-card > p {
+  margin: 8px 0;
+  font-size: 0.95em;
   color: #444;
-  text-align: center; 
+  text-align: center;
 }
 .card-info {
   display: flex;
-  gap : 10px;
+  gap: 10px;
   padding-top: 10px;
-  border-top: solid 1px rgba(0, 0, 0, 0.2);  
+  border-top: solid 1px rgba(0, 0, 0, 0.2);
 }
 
 .business-card .email,
 .business-card .phone,
 .business-card .url {
   font-size: 0.9em;
-  color: #333; /* Muted color for contact details */
-  margin-top: 0; /* Less top margin */
-  margin-bottom: 4px; /* Slightly more bottom margin */
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 
 .business-card .url {
-  text-decoration: none; /* No underline for URLs initially */
-  color: navy;              /* Navy color for URLs */
+  text-decoration: none;
+  color: navy;
 }
 
 .business-card .url:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
 /* footer */

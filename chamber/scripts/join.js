@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const form = document.getElementById('join-form');
     form.addEventListener('submit', (event) => {
-      
+        dialog.close();      
     });
 
 

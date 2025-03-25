@@ -24,22 +24,22 @@
     <meta
       property="og:description"
       content="Join the Johannesburg Chamber of Commerce and connect with a vibrant business community. Access resources, networking, and advocacy to help your business thrive in Johannesburg."
-  >
+    />
 
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-  >
+    />
 
     <script src="./scripts/date.js" defer></script>
     <script src="./scripts/navigation.js" defer></script>
-    <script src="./scripts/join.js" defer></script>  
+    <script src="./scripts/join.js" defer></script>
   </head>
   <body>
     <header>
@@ -64,51 +64,102 @@
     </nav>
     <main>
       <h1 id="title">Join Us</h1>
-      <p>Want to become a member?</p>
-      <button id="openButton">Join Us!</button>
-      <dialog id="contact-form">
+      <p>
+        To become a member of the Johanneburg Chamber of Commerce, please fill
+        out the form below and we will be in touch with you soon.
+      </p>
+      <div id="contact-form">
         <form id="join-form" method="get" action="thankyou.html">
           <div>
             <label for="first_name">
               Applicant's First Name:
-              <input type="text" id="first_name" name="first_name" required title="Enter your first name" autocomplete="given-name">
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                required
+                title="Enter your first name"
+                autocomplete="given-name"
+              />
             </label>
           </div>
           <div>
             <label for="last_name">
               Applicant's Last Name:
-              <input type="text" id="last_name" name="last_name" required title="Enter your last name" autocomplete="family-name">
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                required
+                title="Enter your last name"
+                autocomplete="family-name"
+              />
             </label>
           </div>
           <div>
             <label for="organizational_title">
               Your Organizational Title:
-              <input type="text" id="organizational_title" name="organizational_title" title="Enter your organizational title (min. 7 characters, letters, hyphens, spaces only)" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}">
+              <input
+                type="text"
+                id="organizational_title"
+                name="organizational_title"
+                title="Enter your organizational title (min. 7 characters, letters, hyphens, spaces only)"
+                autocomplete="organization-title"
+                pattern="[a-zA-Z\s\-]{7,}"
+              />
             </label>
           </div>
           <div>
             <label for="email">
               Email Address:
-              <input type="email" name="email" id="email" required autocomplete="email" placeholder="e.g., info@organization.com" title="Enter your email address">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                autocomplete="email"
+                placeholder="info@organization.com"
+                title="Enter your email address"
+              />
             </label>
           </div>
           <div>
             <label for="mobile_number">
               Mobile Phone Number:
-              <input type="tel" id="mobile_number" name="mobile_number" required autocomplete="tel" title="Enter your mobile phone number">
+              <input
+                type="tel"
+                id="mobile_number"
+                name="mobile_number"
+                required
+                autocomplete="tel"
+                title="Enter your mobile phone number"
+              />
             </label>
           </div>
           <div>
             <label for="business_name">
               Business/Organization's Name:
-              <input type="text" id="business_name" name="business_name" required autocomplete="organization" title="Enter your organization's name">
+              <input
+                type="text"
+                id="business_name"
+                name="business_name"
+                required
+                autocomplete="organization"
+                title="Enter your organization's name"
+              />
             </label>
           </div>
           <div>
             <label for="membership_level">
               Membership Level:
-              <select id="membership_level" name="membership_level" title="Select your desired membership level">
-                <option value="NP Membership">NP Membership (Non-Profit)</option>
+              <select
+                id="membership_level"
+                name="membership_level"
+                title="Select your desired membership level"
+              >
+                <option value="NP Membership">
+                  NP Membership (Non-Profit)
+                </option>
                 <option value="Bronze Membership">Bronze Membership</option>
                 <option value="Silver Membership">Silver Membership</option>
                 <option value="Gold Membership">Gold Membership</option>
@@ -118,22 +169,25 @@
           <div>
             <label for="organization_description">
               Business/Organization's Description:
-              <textarea id="organization_description" name="organization_description" title="Enter a description of your organization"></textarea>
+              <textarea
+                id="organization_description"
+                name="organization_description"
+                title="Enter a description of your organization"
+              ></textarea>
             </label>
           </div>
           <div>
             <label for="timestamp">
-              <input type="hidden" id="timestamp" name="timestamp">
+              <input type="hidden" id="timestamp" name="timestamp" />
             </label>
           </div>
           <div>
             <button type="submit">Submit Application</button>
           </div>
         </form>
-      </dialog>
-    
+      </div>
     </main>
-    
+
     <footer class="footer-grid">
       <div class="foot contact-info">
         <h3>Johannesburg Chamber of Commerce</h3>

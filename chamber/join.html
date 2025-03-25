@@ -1,162 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="The official website of the Johannesburg Chamber of Commerce. Supporting and promoting business growth in Johannesburg."
-  >
-    <meta name="author" content="Brighton Dube">
-    <title>Johannesburg Chamber of Commerce - Your Business Hub</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!--  Essential META Tags -->
-    <meta property="og:title" content="Johannesburg Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta
-      property="og:image"
-      content="https://brightondube.github.io/wdd231/chamber/images/johannesburg.jpg"
-  >
-    <meta
-      property="og:url"
-      content="https://brightondube.github.io/wdd231/chamber/directory.html"
-  >
-    <meta
-      property="og:description"
-      content="Join the Johannesburg Chamber of Commerce and connect with a vibrant business community. Access resources, networking, and advocacy to help your business thrive in Johannesburg."
-    />
 
-    <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/small.css" />
-    <link rel="stylesheet" href="styles/larger.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The official website of the Johannesburg Chamber of Commerce. Supporting and promoting business growth in Johannesburg.">
+  <meta name="author" content="Brighton Dube">
+  <title>Johannesburg Chamber of Commerce - Your Business Hub</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!--  Essential META Tags -->
+  <meta property="og:title" content="Johannesburg Chamber of Commerce">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brightondube.github.io/wdd231/chamber/images/johannesburg.jpg">
+  <meta property="og:url" content="https://brightondube.github.io/wdd231/chamber/directory.html">
+  <meta property="og:description"
+    content="Join the Johannesburg Chamber of Commerce and connect with a vibrant business community. Access resources, networking, and advocacy to help your business thrive in Johannesburg." />
 
-    <script src="./scripts/date.js" defer></script>
-    <script src="./scripts/navigation.js" defer></script>
-    <script src="./scripts/join.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <span id="logo">JCC</span>
-      <span>Johanneburg Chamber of Commerce</span>
-      <button id="nav-button"></button>
-    </header>
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <nav id="animate-me">
-      <ul class="menu-links">
-        <li class="active">
-          <a href="index.html" title="Home">Home</a>
-        </li>
-        <li><a href="directory.html" title="Directory">Directory</a></li>
-        <li>
-          <a href="join.html" title="Join Us">Join Us</a>
-        </li>
-        <li>
-          <a href="discover.html" title="Discover">Discover</a>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <h1 id="title">Join Us</h1>
-      <p>
-        To become a member of the Johanneburg Chamber of Commerce, please fill
-        out the form below and we will be in touch with you soon.
-      </p>
+  <script src="./scripts/date.js" defer></script>
+  <script src="./scripts/navigation.js" defer></script>
+  <script src="./scripts/join.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <span id="logo">JCC</span>
+    <span>Johanneburg Chamber of Commerce</span>
+    <button id="nav-button"></button>
+  </header>
+
+  <nav id="animate-me">
+    <ul class="menu-links">
+      <li class="active">
+        <a href="index.html" title="Home">Home</a>
+      </li>
+      <li><a href="directory.html" title="Directory">Directory</a></li>
+      <li>
+        <a href="join.html" title="Join Us">Join Us</a>
+      </li>
+      <li>
+        <a href="discover.html" title="Discover">Discover</a>
+      </li>
+    </ul>
+  </nav>
+  <main id="container">
+    <h1>Join Us</h1>
+    <p>
+      To become a member of the Johanneburg Chamber of Commerce, please fill
+      out the form below and we will be in touch with you soon.
+    </p>
+    <div class="membership">
       <div id="contact-form">
+        <h2>Membership application form</h2>
         <form id="join-form" method="get" action="thankyou.html">
           <div>
             <label for="first_name">
               Applicant's First Name:
-              <input
-                type="text"
-                id="first_name"
-                name="first_name"
-                required
-                title="Enter your first name"
-                autocomplete="given-name"
-              />
+              <input type="text" id="first_name" name="first_name" required title="Enter your first name"
+                autocomplete="given-name" />
             </label>
           </div>
           <div>
             <label for="last_name">
               Applicant's Last Name:
-              <input
-                type="text"
-                id="last_name"
-                name="last_name"
-                required
-                title="Enter your last name"
-                autocomplete="family-name"
-              />
+              <input type="text" id="last_name" name="last_name" required title="Enter your last name"
+                autocomplete="family-name" />
             </label>
           </div>
           <div>
             <label for="organizational_title">
               Your Organizational Title:
-              <input
-                type="text"
-                id="organizational_title"
-                name="organizational_title"
+              <input type="text" id="organizational_title" name="organizational_title"
                 title="Enter your organizational title (min. 7 characters, letters, hyphens, spaces only)"
-                autocomplete="organization-title"
-                pattern="[a-zA-Z\s\-]{7,}"
-              />
+                autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}" />
             </label>
           </div>
           <div>
             <label for="email">
               Email Address:
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                autocomplete="email"
-                placeholder="info@organization.com"
-                title="Enter your email address"
-              />
+              <input type="email" name="email" id="email" required autocomplete="email"
+                placeholder="info@organization.com" title="Enter your email address" />
             </label>
           </div>
           <div>
             <label for="mobile_number">
               Mobile Phone Number:
-              <input
-                type="tel"
-                id="mobile_number"
-                name="mobile_number"
-                required
-                autocomplete="tel"
-                title="Enter your mobile phone number"
-              />
+              <input type="tel" id="mobile_number" name="mobile_number" required autocomplete="tel"
+                title="Enter your mobile phone number" />
             </label>
           </div>
           <div>
             <label for="business_name">
               Business/Organization's Name:
-              <input
-                type="text"
-                id="business_name"
-                name="business_name"
-                required
-                autocomplete="organization"
-                title="Enter your organization's name"
-              />
+              <input type="text" id="business_name" name="business_name" required autocomplete="organization"
+                title="Enter your organization's name" />
             </label>
           </div>
           <div>
             <label for="membership_level">
               Membership Level:
-              <select
-                id="membership_level"
-                name="membership_level"
-                title="Select your desired membership level"
-              >
+              <select id="membership_level" name="membership_level" title="Select your desired membership level">
                 <option value="NP Membership">
                   NP Membership (Non-Profit)
                 </option>
@@ -169,11 +120,8 @@
           <div>
             <label for="organization_description">
               Business/Organization's Description:
-              <textarea
-                id="organization_description"
-                name="organization_description"
-                title="Enter a description of your organization"
-              ></textarea>
+              <textarea id="organization_description" name="organization_description"
+                title="Enter a description of your organization"></textarea>
             </label>
           </div>
           <div>
@@ -186,55 +134,77 @@
           </div>
         </form>
       </div>
-    </main>
+      <div id="levels">
+        <h2>Membership Levels</h2>
+        <div class="member-card"><h3>Membership Level</h3><button type="button" class="open-button">Learn More</button>
+          <dialog class="membership-info">
+            <h4>Membership Level</h4>
+            <p>This membership level provides</p>
+            bu
 
-    <footer class="footer-grid">
-      <div class="foot contact-info">
-        <h3>Johannesburg Chamber of Commerce</h3>
-        <p>
-          125 Daisy Street <br />
-          Sandown, 2196 <br />
-          Johannesburg <br />
-          <a href="mailto:info@joburgcc.org">info@joburgcc.org</a> <br />
-          (011) 345-3456
-        </p>
-      </div>
+          </dialog>
+        </div>
+        <div class="member-card"><h3>Membership Level</h3><button type="button" class="open-button">Learn More</button>
+          <dialog class="membership-info">
+            <h4>Membership Level</h4>
+            <p>This membership level provides</p>
+            bu
 
-      <div class="foot" id="socials">
-        <div class="social-icons-container">
-          <a
-            href="youtube.com"
-            target="_blank"
-            aria-label="YouTube"
-            class="social-icon youtube"
-            ><img src="images/youtube-brands.svg" alt="YouTube Icon"
-          /></a>
-          <a
-            href="#"
-            target="_blank"
-            aria-label="X (Twitter)"
-            class="social-icon twitter"
-            ><img src="images/square-x-brands.svg" alt="Twitter Icon"
-          /></a>
-          <a
-            href="#"
-            target="_blank"
-            aria-label="LinkedIn"
-            class="social-icon linkedin"
-            ><img src="images/linkedin-brands.svg" alt="LinkedIn Icon"
-          /></a>
+          </dialog>
+        </div>
+        <div class="member-card"><h3>Membership Level</h3><button type="button" class="open-button">Learn More</button>
+          <dialog class="membership-info">
+            <h4>Membership Level</h4>
+            <p>This membership level provides</p>
+            bu
+
+          </dialog>
+        </div>
+        <div class="member-card"><h3>Membership Level</h3><button type="button" class="open-button">Learn More</button>
+          <dialog class="membership-info">
+            <h4>Membership Level</h4>
+            <p>This membership level provides</p>
+            bu
+
+          </dialog>
         </div>
       </div>
+    </div>
+  </main>
 
-      <div class="foot copyright">
-        <p>
-          WDD231 Class Project<br />
-          Brighton Dube<br />
-          © <span id="currentYear"></span> Johannesburg Chamber of Commerce<br />
-        </p>
+  <footer class="footer-grid">
+    <div class="foot contact-info">
+      <h3>Johannesburg Chamber of Commerce</h3>
+      <p>
+        125 Daisy Street <br />
+        Sandown, 2196 <br />
+        Johannesburg <br />
+        <a href="mailto:info@joburgcc.org">info@joburgcc.org</a> <br />
+        (011) 345-3456
+      </p>
+    </div>
 
-        <p id="lastModified"></p>
+    <div class="foot" id="socials">
+      <div class="social-icons-container">
+        <a href="youtube.com" target="_blank" aria-label="YouTube" class="social-icon youtube"><img
+            src="images/youtube-brands.svg" alt="YouTube Icon" /></a>
+        <a href="#" target="_blank" aria-label="X (Twitter)" class="social-icon twitter"><img
+            src="images/square-x-brands.svg" alt="Twitter Icon" /></a>
+        <a href="#" target="_blank" aria-label="LinkedIn" class="social-icon linkedin"><img
+            src="images/linkedin-brands.svg" alt="LinkedIn Icon" /></a>
       </div>
-    </footer>
-  </body>
+    </div>
+
+    <div class="foot copyright">
+      <p>
+        WDD231 Class Project<br />
+        Brighton Dube<br />
+        © <span id="currentYear"></span> Johannesburg Chamber of Commerce<br />
+      </p>
+
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+</body>
+
 </html>

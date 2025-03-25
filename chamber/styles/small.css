@@ -335,3 +335,13 @@ footer.footer-grid {
 .copyright {
   text-align: center;
 }
+
+/*Join Page */
+#container {
+  padding : 0 50px;
+}
+.membership {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+}

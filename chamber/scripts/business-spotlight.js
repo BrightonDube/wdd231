@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayRandomBusinesses(members) {
     const businessCards = document.querySelectorAll(".business-card");
-    
+
     if (members.length === 0) {
         console.warn("No eligible businesses found.");
         return;
@@ -33,7 +33,19 @@ function displayRandomBusinesses(members) {
             card.querySelector(".phone").textContent = `Phone: ${business["phone numbers"]}`;
             card.querySelector(".url a").href = business["website URLs"];
             card.querySelector(".url a").textContent = business["website URLs"];
-            card.querySelector(".membership").textContent = `Membership Level: ${business["membership level"]}`;
+
+            // Convert membership level number to text
+            let membershipLevelText = "";
+            const membershipLevel = business["membership level"];
+            if (membershipLevel === 2) {
+                membershipLevelText = "Silver";
+            } else if (membershipLevel === 3) {
+                membershipLevelText = "Gold";
+            } else {
+                membershipLevelText = "Member"; 
+            }
+            card.querySelector(".membership").textContent = `Membership Level: ${membershipLevelText}`;
+
 
             const logo = card.querySelector(".business-logo");
             logo.src = business["image or icon file names"];

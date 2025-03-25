@@ -67,46 +67,64 @@
       <p>Want to become a member?</p>
       <button id="openButton">Join Us!</button>
       <dialog id="contact-form">
-        <form id="join-form">
+        <form id="join-form" method="get" action="thankyou.html">
           <div>
-            <label for="first_name">Applicant's First Name:</label>
-            <input type="text" id="first_name" name="first_name" required title="Enter your first name" autocomplete="given-name">
+            <label for="first_name">
+              Applicant's First Name:
+              <input type="text" id="first_name" name="first_name" required title="Enter your first name" autocomplete="given-name">
+            </label>
           </div>
           <div>
-            <label for="last_name">Applicant's Last Name:</label>
-            <input type="text" id="last_name" name="last_name" required title="Enter your last name" autocomplete="family-name">
+            <label for="last_name">
+              Applicant's Last Name:
+              <input type="text" id="last_name" name="last_name" required title="Enter your last name" autocomplete="family-name">
+            </label>
           </div>
           <div>
-            <label for="organizational_title">Your Organizational Title:</label>
-            <input type="text" id="organizational_title" name="organizational_title" title="Enter your organizational title (min. 7 characters, letters, hyphens, spaces only)" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}">
+            <label for="organizational_title">
+              Your Organizational Title:
+              <input type="text" id="organizational_title" name="organizational_title" title="Enter your organizational title (min. 7 characters, letters, hyphens, spaces only)" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}">
+            </label>
           </div>
           <div>
-            <label for="email">Email Address:</label>
-            <input type="email" name="email" id="email" required autocomplete="email" placeholder="e.g., info@organization.com" title="Enter your email address">
+            <label for="email">
+              Email Address:
+              <input type="email" name="email" id="email" required autocomplete="email" placeholder="e.g., info@organization.com" title="Enter your email address">
+            </label>
           </div>
           <div>
-            <label for="mobile_number">Mobile Phone Number:</label>
-            <input type="tel" id="mobile_number" name="mobile_number" required autocomplete="tel" title="Enter your mobile phone number">
+            <label for="mobile_number">
+              Mobile Phone Number:
+              <input type="tel" id="mobile_number" name="mobile_number" required autocomplete="tel" title="Enter your mobile phone number">
+            </label>
           </div>
           <div>
-            <label for="business_name">Business/Organization's Name:</label>
-            <input type="text" id="business_name" name="business_name" required autocomplete="organization" title="Enter your organization's name">
+            <label for="business_name">
+              Business/Organization's Name:
+              <input type="text" id="business_name" name="business_name" required autocomplete="organization" title="Enter your organization's name">
+            </label>
           </div>
           <div>
-            <label for="membership_level">Membership Level:</label>
-            <select id="membership_level" name="membership_level" title="Select your desired membership level">
-              <option value="NP Membership">NP Membership (Non-Profit)</option>
-              <option value="Bronze Membership">Bronze Membership</option>
-              <option value="Silver Membership">Silver Membership</option>
-              <option value="Gold Membership">Gold Membership</option>
-            </select>
+            <label for="membership_level">
+              Membership Level:
+              <select id="membership_level" name="membership_level" title="Select your desired membership level">
+                <option value="NP Membership">NP Membership (Non-Profit)</option>
+                <option value="Bronze Membership">Bronze Membership</option>
+                <option value="Silver Membership">Silver Membership</option>
+                <option value="Gold Membership">Gold Membership</option>
+              </select>
+            </label>
           </div>
           <div>
-            <label for="organization_description">Business/Organization's Description:</label>
-            <textarea id="organization_description" name="organization_description" title="Enter a description of your organization"></textarea>
+            <label for="organization_description">
+              Business/Organization's Description:
+              <textarea id="organization_description" name="organization_description" title="Enter a description of your organization"></textarea>
+            </label>
           </div>
           <div>
-            <input type="hidden" id="timestamp" name="timestamp">
+            <label for="timestamp">
+              <input type="hidden" id="timestamp" name="timestamp">
+            </label>
           </div>
           <div>
             <button type="submit">Submit Application</button>
@@ -115,6 +133,7 @@
       </dialog>
     
     </main>
+    
     <footer class="footer-grid">
       <div class="foot contact-info">
         <h3>Johannesburg Chamber of Commerce</h3>

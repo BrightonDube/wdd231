@@ -1,20 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const timestampInput = document.getElementById('timestamp');
-    if (timestampInput) {
-      timestampInput.value = new Date().toISOString(); 
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  let lastScrollPosition = 0; 
 
-    const dialog = document.getElementById('contact-form');
-    const openButton = document.getElementById('openButton');
+  const openButtons = document.querySelectorAll(".open-button");
+  const closeButtons = document.querySelectorAll(".close-btn");
 
-    openButton.addEventListener('click', () => {
-      dialog.showModal();
+  openButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      lastScrollPosition = window.scrollY; 
+      const card = this.closest(".member-card"); 
+      const dialog = card.querySelector(".membership-info"); 
+      dialog.showModal(); 
     });
-
-    const form = document.getElementById('join-form');
-    form.addEventListener('submit', (event) => {
-        dialog.close();      
-    });
-
-
   });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const dialog = this.closest(".membership-info"); 
+      dialog.close(); 
+
+      
+      setTimeout(() => {
+        window.scrollTo({ top: lastScrollPosition, behavior: "smooth" });
+      }, 100); 
+    });
+  });
+});

@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -27,7 +27,7 @@ header {
 }
 
 #logo {
-  font-family: 'Arial Black', sans-serif;
+  font-family: "Arial Black", sans-serif;
   font-size: 2.5em;
   font-weight: bold;
   color: #0b0b0b;
@@ -55,7 +55,7 @@ nav.open {
 }
 
 #nav-button::before {
-  content: '☰';
+  content: "☰";
 }
 
 #nav-button {
@@ -85,7 +85,7 @@ ul.menu-links {
 }
 
 #nav-button.open::before {
-  content: 'X';
+  content: "X";
 }
 
 ul.menu-links.open {
@@ -338,10 +338,88 @@ footer.footer-grid {
 
 /*Join Page */
 #container {
-  padding : 0 50px;
+  padding: 0 50px 50px;
 }
 .membership {
+  border-top: 1px solid #999;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 100px;
+}
+.member-card {
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 0 20px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.member-card button {
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #93c2df;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* Modal (dialog) styling */
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 60px 20px 20px;
+  text-align: center;
+  min-width: 300px;
+  min-height: 200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+/* Modal header (title) */
+dialog h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+/* Modal text */
+dialog p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Style the list */
+dialog ul {
+  padding-left: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+dialog ul li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  list-style: none;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Close button styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+/* Backdrop styling */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.member-card button:hover {
+  background: #2980b9;
 }

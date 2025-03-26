@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  color: #333; /* Standardize base text color to darker shade */
 }
 
 *,
@@ -338,9 +339,9 @@ footer.footer-grid {
 
 /*Join Page */
 #container {
-  padding: 0 20px 50px; 
-  max-width: 1200px; 
-  margin: 0 auto; 
+  padding: 0 20px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #container h1 {
@@ -353,12 +354,22 @@ footer.footer-grid {
   margin-bottom: 30px;
   color: #777;
 }
+
 .membership {
   border-top: 1px solid #999;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr; /* Default to single column */
+  gap: 30px;
+  padding-top: 20px;
 }
+
+@media (min-width: 768px) {
+  .membership {
+    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+    gap: 40px;
+  }
+}
+
 #contact-form {
   background-color: #fff;
   padding: 30px;
@@ -366,10 +377,12 @@ footer.footer-grid {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-#contact-form h2 {
+#contact-form h2,
+#levels h2 { /* Unified heading style for form and membership levels */
   text-align: center;
   color: #333;
   margin-bottom: 25px;
+  font-size: 1.8em; /* Adjusted font size for better prominence */
 }
 
 #join-form {
@@ -386,7 +399,7 @@ footer.footer-grid {
   display: block;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #555;
+  color: #444; /* Darker label color for better contrast */
 }
 
 #join-form input[type="text"],
@@ -401,6 +414,7 @@ footer.footer-grid {
   font-size: 1rem;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: #333; /* Ensure input text is also darker */
 }
 
 #join-form input::placeholder {
@@ -420,48 +434,104 @@ footer.footer-grid {
   background-position-x: calc(100% - 10px);
   background-position-y: 50%;
   padding-right: 30px;
+  color: #333; /* Ensure select text is also darker */
 }
 
 #join-form button[type="submit"] {
-  background-color: #007bff;
-  color: white;
-  border: none;
   padding: 12px 25px;
-  border-radius: 4px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Keep border for consistency */
+  background-color: #93c2df; /* Use membership card button color */
   cursor: pointer;
+  transition: 0.3s;
   font-size: 1.1rem;
-  transition: background-color 0.3s ease;
   font-family: 'Poppins', sans-serif;
+  color: #333; /* Dark text color for submit button */
+  font-weight: 500; /* Slightly bolder text for submit button */
 }
 
 #join-form button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #2980b9; /* Use membership card button hover color */
+  color: #fff; /* White text on hover for better contrast */
+}
+
+#levels {
+  /* No specific styling needed here for layout */
+}
+
+#levels h2 {
+  /* Using unified heading style from #contact-form h2, #levels h2 */
 }
 
 .member-card {
   text-align: center;
   background-color: #f1f1f1;
   border-radius: 0 20px;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 20px;
+  margin: 15px 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: translate(20px);
+  transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
+
 .member-card.animated {
   opacity: 1;
-  transform: translate(0);
+  transform: translateY(0);
 }
 
-.member-card button {
-  padding: 7px;
+.member-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333; /* Darker heading color */
+  font-size: 1.5em; /* Slightly larger for emphasis */
+}
+
+.member-card p {
+  color: #555; /* Slightly darker paragraph color */
+  margin-bottom: 20px;
+  line-height: 1.5; /* Improved line height for readability */
+}
+
+.member-card ul {
+  padding-left: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.member-card ul li {
+  font-size: 1rem; /* Consistent list item font size */
+  color: #444; /* Darker list item color */
+  line-height: 1.6;
+  list-style: none;
+  position: relative;
+  padding-left: 25px;
+}
+
+.member-card ul li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.member-card button.open-button {
+  padding: 10px 20px;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Keep border for consistency */
   background-color: #93c2df;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 1rem;
+  color: #333; /* Darker button text color */
+  font-weight: 500; /* Slightly bolder button text */
 }
+
+.member-card button.open-button:hover {
+  background: #2980b9;
+  color: #fff; /* White text on hover for better contrast */
+}
+
 /* Modal (dialog) styling */
 dialog {
   border: none;
@@ -471,41 +541,39 @@ dialog {
   min-width: 300px;
   min-height: 200px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-/* Modal header (title) */
-dialog h4 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-/* Modal text */
-dialog p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 15px;
-  text-align: left;
 }
 
-/* Style the list */
+dialog h4 {
+  font-size: 1.5em; /* Slightly smaller modal heading to differentiate */
+  font-weight: bold;
+  color: #333; /* Darker modal heading color */
+  margin-top: 0;
+  margin-bottom: 10px; /* Reduced margin for modal heading */
+}
+
+dialog p {
+  font-size: 1rem; /* Consistent modal paragraph font size */
+  color: #555; /* Slightly darker modal paragraph color */
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 1.5; /* Improved line height for modal paragraph */
+}
+
 dialog ul {
   padding-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced margin for modal list */
   text-align: left;
 }
 
 dialog ul li {
-  font-size: 14px;
-  color: #444;
+  font-size: 1rem; /* Consistent modal list item font size */
+  color: #444; /* Darker modal list item color */
   line-height: 1.6;
   list-style: none;
   position: relative;
   padding-left: 25px;
 }
 
-/* Close button styling */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -514,14 +582,11 @@ dialog ul li {
   cursor: pointer;
   border: none;
   background: none;
-}
-/* Backdrop styling */
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  color: #777; /* Keep close button color */
 }
 
-.member-card button:hover {
-  background: #2980b9;
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #thank-you-message {
@@ -542,4 +607,6 @@ dialog::backdrop {
   max-width: 700px;
   margin: 0 auto; /* Center the paragraph */
 }
-
+#formDataSection {
+  text-align: center;
+}

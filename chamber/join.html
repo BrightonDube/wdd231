@@ -137,10 +137,10 @@
       <div id="levels">
         <h2>Membership Levels</h2>
         <div class="member-card" data-animation-delay="0">
-          <h3>Non-Profit Membership Level</h3>
-          <button type="button" class="open-button">Learn More</button>
-          <dialog class="membership-info">
-            <h4>Non-Profit Membership Level</h4>
+          <h3 id="dialog-title-np-membership">Non-Profit Membership Level</h3>
+          <button type="button" class="open-button" aria-label="Learn more about Non-Profit Membership Level">Learn More</button>
+          <dialog class="membership-info" aria-modal="true" aria-labelledby="dialog-title-np-membership">
+            <h4 id="dialog-title-np-membership">Non-Profit Membership Level</h4>
             <p>💡 <em>For charitable organizations & non-profits looking to grow their impact.</em></p>
             <ul>
               <li>✅ Discounted membership rates</li>
@@ -148,15 +148,15 @@
               <li>✅ Promotion on our website & social media</li>
               <li>✅ Advocacy support for non-profit initiatives</li>
             </ul>
-            <button class="close-btn">×</button>
+            <button class="close-btn" aria-label="Close Non-Profit Membership Level Information">×</button>
           </dialog>
         </div>
 
         <div class="member-card" data-animation-delay="0.2">
-          <h3>Bronze Membership Level</h3>
-          <button type="button" class="open-button">Learn More</button>
-          <dialog class="membership-info">
-            <h4>Bronze Membership Level</h4>
+          <h3 id="dialog-title-bronze-membership">Bronze Membership Level</h3>
+          <button type="button" class="open-button" aria-label="Learn more about Bronze Membership Level">Learn More</button>
+          <dialog class="membership-info" aria-modal="true" aria-labelledby="dialog-title-bronze-membership">
+            <h4 id="dialog-title-bronze-membership">Bronze Membership Level</h4>
             <p>💡 <em>Ideal for small businesses or startups seeking local connections.</em></p>
             <ul>
               <li>✅ Business directory listing</li>
@@ -164,15 +164,15 @@
               <li>✅ Access to business resources</li>
               <li>✅ Exclusive member discounts</li>
             </ul>
-            <button class="close-btn">×</button>
+            <button class="close-btn" aria-label="Close Bronze Membership Level Information">×</button>
           </dialog>
         </div>
 
         <div class="member-card" data-animation-delay="0.4">
-          <h3>Silver Membership Level</h3>
-          <button type="button" class="open-button">Learn More</button>
-          <dialog class="membership-info">
-            <h4>Silver Membership Level</h4>
+          <h3 id="dialog-title-silver-membership">Silver Membership Level</h3>
+          <button type="button" class="open-button" aria-label="Learn more about Silver Membership Level">Learn More</button>
+          <dialog class="membership-info" aria-modal="true" aria-labelledby="dialog-title-silver-membership">
+            <h4 id="dialog-title-silver-membership">Silver Membership Level</h4>
             <p>💡 <em>For growing businesses looking to expand their reach.</em></p>
             <ul>
               <li>✅ All Bronze benefits +</li>
@@ -180,15 +180,15 @@
               <li>✅ Featured spot in newsletters & social media</li>
               <li>✅ Discounts on event sponsorships</li>
             </ul>
-            <button class="close-btn">×</button>
+            <button class="close-btn" aria-label="Close Silver Membership Level Information">×</button>
           </dialog>
         </div>
 
         <div class="member-card" data-animation-delay="0.6">
-          <h3>Gold Membership Level</h3>
-          <button type="button" class="open-button">Learn More</button>
-          <dialog class="membership-info">
-            <h4>Gold Membership Level</h4>
+          <h3 id="dialog-title-gold-membership">Gold Membership Level</h3>
+          <button type="button" class="open-button" aria-label="Learn more about Gold Membership Level">Learn More</button>
+          <dialog class="membership-info" aria-modal="true" aria-labelledby="dialog-title-gold-membership">
+            <h4 id="dialog-title-gold-membership">Gold Membership Level</h4>
             <p>💡 <em>Perfect for established businesses wanting premium exposure.</em></p>
             <ul>
               <li>✅ All Silver benefits +</li>
@@ -196,12 +196,13 @@
               <li>✅ Exclusive VIP networking events</li>
               <li>✅ Premium sponsorship & advertising options</li>
             </ul>
-            <button class="close-btn">×</button>
+            <button class="close-btn" aria-label="Close Gold Membership Level Information">×</button>
           </dialog>
         </div>
       </div>
     </div>
   </main>
+
 
   <footer class="footer-grid">
     <div class="foot contact-info">

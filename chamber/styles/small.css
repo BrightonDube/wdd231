@@ -352,7 +352,7 @@ footer.footer-grid {
 #container p {
   text-align: center;
   margin-bottom: 30px;
-  color: #777;
+  color: black;
 }
 
 .membership {
@@ -378,7 +378,8 @@ footer.footer-grid {
 }
 
 #contact-form h2,
-#levels h2 { /* Unified heading style for form and membership levels */
+#levels h2 {
+  /* Unified heading style for form and membership levels */
   text-align: center;
   color: #333;
   margin-bottom: 25px;
@@ -413,7 +414,7 @@ footer.footer-grid {
   border-radius: 4px;
   font-size: 1rem;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #333; /* Ensure input text is also darker */
 }
 
@@ -441,11 +442,11 @@ footer.footer-grid {
   padding: 12px 25px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1); /* Keep border for consistency */
-  background-color: #93c2df; /* Use membership card button color */
+  background-color: rgb(185, 206, 219); /* Use membership card button color */
   cursor: pointer;
   transition: 0.3s;
   font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #333; /* Dark text color for submit button */
   font-weight: 500; /* Slightly bolder text for submit button */
 }
@@ -472,7 +473,9 @@ footer.footer-grid {
   border: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
 }
 
 .member-card.animated {
@@ -508,18 +511,11 @@ footer.footer-grid {
   padding-left: 25px;
 }
 
-.member-card ul li::before {
-  content: "✅";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 .member-card button.open-button {
   padding: 10px 20px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1); /* Keep border for consistency */
-  background-color: #93c2df;
+  background-color: rgb(185, 206, 219);
   cursor: pointer;
   transition: 0.3s;
   font-size: 1rem;
@@ -595,7 +591,7 @@ dialog::backdrop {
 }
 
 #thank-you-title {
-  color: #28a745; /* Example success color */
+  color: #185c28; /* Example success color */
   font-size: 2.5em;
   margin-bottom: 20px;
 }

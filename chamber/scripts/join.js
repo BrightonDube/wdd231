@@ -3,7 +3,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const openButtons = document.querySelectorAll(".open-button");
   const closeButtons = document.querySelectorAll(".close-btn");
-  const memberCards = document.querySelectorAll('.member-card'); // Select member cards for animation
+  const memberCards = document.querySelectorAll('.member-card'); 
+  const formDataDisplay = document.getElementById('formDataDisplay');
+  const urlParams = new URLSearchParams(window.location.search);
+  let formDataHTML = '<dl>';
+
+  const requiredFields = [
+    { name: 'first_name', label: "Applicant's First Name" },
+    { name: 'last_name', label: "Applicant's Last Name" },
+    { name: 'email', label: 'Email Address' },
+    { name: 'mobile_number', label: 'Mobile Phone Number' },
+    { name: 'business_name', label: "Business/Organization's Name" },
+    { name: 'timestamp', label: 'Application Date' }
+  ];
+
+  requiredFields.forEach(field => {
+    const value = urlParams.get(field.name);
+    if (value) {
+      formDataHTML += `<dt>${field.label}:</dt><dd>${decodeURIComponent(value)}</dd>`;
+    }
+  });
+
+  formDataHTML += '</dl>';
+
+  if (formDataDisplay) {
+    formDataDisplay.innerHTML = formDataHTML.length > 10 ? formDataHTML : "<p>No application data to display.</p>"; // Basic check to see if data was added
+  }
 
 
   memberCards.forEach(card => {

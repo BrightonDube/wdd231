@@ -17,7 +17,7 @@ p {
     grid-area: p;
   }
 
-.grid-template-area {
+.grid-card {
     text-align: center;
     margin: 1rem;
 }

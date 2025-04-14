@@ -1,0 +1,50 @@
+/* Color Schema */
+body {
+    background-color: #f4f1de; /* Light Cream Background */
+    color: #3d405b; /* Dark Navy Text */
+    font-family: 'Arial', sans-serif; /* Default font */
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #e07a5f; /* Salmon Red Headings */
+    font-family: 'Georgia', serif; /* Heading font */
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff; /* White section background */
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Typography */
+body {
+    font-size: 16px; /* Base font size */
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Basic Styling for Wireframe Description */
+.wireframe-description {
+    font-style: italic;
+    color: #777;
+    margin-top: 10px;
+}

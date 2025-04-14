@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Table Whisperer Site plan">
+    <meta name="author" content="Brighton Dube">
+    <title>Table Whisperer Site plan</title>    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Table Whisper Project Site Plan</h1>
+    </header>
+
+    <main>
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <h3>Table Whisperer</h3>
+            <p><strong>Reason for Selection:</strong> This name is intriguing and suggests an intuitive and almost effortless restaurant reservation experience.  "Whisperer" implies a system that understands and manages tables effectively, making the process smooth for both restaurants and diners. It's memorable and brandable.</p>
+            <p><strong>Optional Domain Availability:</strong> tablewhisperer.com</p>
+        </section>
+
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>The purpose of "Table Whisperer" is to be a user-friendly frontend for a restaurant reservation system. It will connect to a backend API (that you've already created) to provide a seamless experience for users to find and book tables at restaurants. The site will:</p>
+            <ul>
+                <li>Allow users to search for restaurants based on criteria such as cuisine, location, date, time, and party size.</li>
+                <li>Display restaurant listings with relevant information (name, cuisine type, location, photos, reviews - if available from backend API).</li>
+                <li>Enable users to view restaurant availability and book tables in real-time via interaction with the backend API.</li>
+                <li>Provide a user account system (if required by your project scope) to manage reservations, view booking history, and potentially save favorite restaurants.</li>
+                <li>Offer a clear and intuitive interface for both desktop and mobile users.</li>
+                <li>Potentially include features like filtering, sorting, and map views of restaurants (depending on backend API capabilities and project scope).</li>
+            </ul>
+        </section>
+
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+            <p>Here are two scenarios representing questions a site visitor (a diner) might ask when using "Table Whisperer":</p>
+            <ol>
+                <li>
+                    <strong>Scenario 1: Finding a Restaurant for a Specific Cuisine and Time</strong>
+                    <p><em>Question: "I want to find an Italian restaurant in downtown that has a table available for 4 people this Saturday at 7 PM. How do I search for this?"</em></p>
+                    <p><strong>Website Solution:</strong> The homepage will feature a prominent search bar or search form allowing users to input criteria like cuisine type (Italian), location (downtown), date (Saturday), time (7 PM), and party size (4).  The system will then query the backend API and display a list of matching restaurants with availability. Filters and sorting options might be available to refine the search further.</p>
+                </li>
+                <li>
+                    <strong>Scenario 2: Checking Reservation Details and Confirmation</strong>
+                    <p><em>Question: "I made a reservation through Table Whisperer yesterday. How can I view my reservation details and get confirmation?"</em></p>
+                    <p><strong>Website Solution:</strong> If user accounts are implemented, users can log in to their account and access a "My Reservations" section. This section will display a list of their upcoming and past reservations, with details like restaurant name, date, time, party size, and reservation status (confirmed, pending, etc.).  Confirmation information should also be clearly displayed after booking and potentially sent via email (depending on backend API and project scope – email functionality might be backend responsibility).</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="color-schema">
+            <h2>Color Schema</h2>
+            <p>The color schema selected for "Table Whisperer" aims for a clean, modern, and trustworthy feel, suitable for a reservation platform.</p>
+            <ul>
+                <li>
+                    <strong>Primary Color:</strong> <code>#e07a5f</code> (Salmon Red)
+                    <ul>
+                        <li><strong>Usage:</strong> Headings (H1, H2, H3), primary buttons (e.g., "Book Now"), accents, and potentially for highlighting interactive elements. This color provides a touch of warmth and calls attention to key actions.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Secondary Color:</strong> <code>#3d405b</code> (Dark Navy)
+                    <ul>
+                        <li><strong>Usage:</strong> Primary text color for paragraphs, body text, labels in forms, and less emphasized headings. This color offers excellent readability and a sense of professionalism.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Background Color:</strong> <code>#f4f1de</code> (Light Cream)
+                    <ul>
+                        <li><strong>Usage:</strong> Main website background color. This provides a soft, neutral, and clean background, allowing content to stand out.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Section Background:</strong> <code>#ffffff</code> (White)
+                    <ul>
+                        <li><strong>Usage:</strong> Background for content sections, cards for restaurant listings, and form areas to create clear visual separation and focus on content blocks.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>This color palette is designed to be accessible, visually appealing, and inspire confidence in the reservation system.</p>
+        </section>
+
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>The typography for "Table Whisperer" is chosen for readability, modernity, and a clean aesthetic, important for a user-friendly interface.</p>
+            <ul>
+                <li>
+                    <strong>Heading Font:</strong> <strong>Georgia, serif</strong>
+                    <ul>
+                        <li><strong>Usage:</strong> Used for all headings (H1, H2, H3). Georgia adds a touch of sophistication and readability to titles and section headers.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Body Font:</strong> <strong>Arial, sans-serif</strong>
+                    <ul>
+                        <li><strong>Usage:</strong> Used for body text, paragraphs, lists, form inputs, and general UI text. Arial is a highly legible and clean sans-serif font, ensuring clarity and accessibility across the interface.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>This font combination aims for a balance of visual hierarchy and excellent readability, crucial for a functional web application.</p>
+        </section>
+
+        <section id="wireframe">
+            <h2>Wireframe</h2>
+            
+            <h3>Mobile View</h3>
+           <img src="mobile_wireframe.png" alt="Mobile Wireframe" >
+            <h3>Desktop View</h3>
+            <img src="wireframe_desktop.png" alt="Desktop Wireframe">
+        
+            <p class="wireframe-description">The desktop view uses a wider layout to present more information and navigation options directly visible.</p>           
+           
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 - Site Plan for Table Whisperer - Brighton Dube</p>
+    </footer>
+</body>
+</html>

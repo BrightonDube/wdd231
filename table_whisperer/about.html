@@ -29,9 +29,9 @@
         <div class="logo">Table Whisperer</div>
         <nav class="navigation">
             <ul>
-                <li><a href="index.html" class="active-nav">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="active-nav">About</a></li>
                 <li id="auth-status"></li>
                 <li><button id="logout-button" style="display:none;">Logout</button></li>
             </ul>
@@ -42,42 +42,22 @@
     </header>
 
     <main class="main-content">
-        <h1 class="page-title">Welcome to Table Whisperer</h1>
-        <section class="hero-section">
-            <p class="hero-text">Find and book the perfect table for any occasion. Discover restaurants near you and make reservations effortlessly.</p>
-        </section>
+        <h1 class="page-title">About Table Whisperer</h1>
 
-        <section id="search-area" class="search-area">
-            <h2>Find a Restaurant</h2>
-            <form id="home-search-form" class="search-form" action="dashboard.html" method="get"> <!-- Form submits to dashboard -->
-                <div class="input-group">
-                    <label for="cuisine">Cuisine:</label>
-                    <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Mexican">
-                </div>
-                <div class="input-group">
-                    <label for="location">Location:</label>
-                    <input type="text" id="location" name="location" placeholder="City or Zip Code">
-                </div>
-                <div class="input-group">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date">
-                </div>
-                <div class="input-group">
-                    <label for="time">Time:</label>
-                    <select id="time" name="time">
-                        <option value="7:00 PM">7:00 PM</option>
-                        <option value="7:30 PM">7:30 PM</option>
-                        </select>
-                </div>
-                <div class="input-group">
-                    <label for="party-size">Party Size:</label>
-                    <select id="party-size" name="party-size">
-                        <option value="1">1 person</option>
-                        <option value="2">2 people</option>
-                    </select>
-                </div>
-                <button type="submit" class="action-button primary">Search Restaurants</button>
-            </form>
+        <section class="about-content">
+            <h2>Our Mission</h2>
+            <p>Table Whisperer is dedicated to simplifying restaurant reservation management for both restaurants and diners. We believe that booking a table should be a seamless and enjoyable experience.</p>
+
+            <h2>What We Offer</h2>
+            <ul>
+                <li>Effortless Online Reservations</li>
+                <li>Intuitive Table Management Tools</li>
+                <li>Customer-Focused Design</li>
+                <li>Reliable and Secure Platform</li>
+            </ul>
+
+            <h2>Contact Us</h2>
+            <p>Have questions or want to learn more? <a href="#">Contact us today</a>!</p>
         </section>
 
     </main>
@@ -95,6 +75,13 @@
             </nav>
         </div>
     </footer>
+    <div id="modal-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <div id="modal-message">
+            </div>
+        </div>
+    </div>
     <script src="script.js" type="module"></script>
 </body>
 </html>

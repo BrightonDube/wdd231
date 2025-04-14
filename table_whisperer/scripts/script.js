@@ -1,11 +1,4 @@
-// script.js - Updated JavaScript (ES Modules, Modal, Dynamic Items)
-
-// --- Import Modules (if you split into modules later - example) ---
-// import { loadTables, createTable } from './modules/table-module.js';
-// import { loadReservations, createReservation } from './modules/reservation-module.js';
-// import { loadRestaurantInfo, updateRestaurantInfo } from './modules/restaurant-info-module.js';
-// import { updateAuthStatus, logoutUser } from './modules/auth-module.js';
-// (For now, keeping all in one file for simplicity, but modularize later if needed)
+// script.js - Updated for Multi-Page Navigation and Logic
 
 // --- API Endpoint Base URL --- (No Change)
 const API_BASE_URL = 'YOUR_API_ENDPOINT_HERE'; // **REPLACE THIS!**
@@ -13,85 +6,200 @@ const API_BASE_URL = 'YOUR_API_ENDPOINT_HERE'; // **REPLACE THIS!**
 // --- Reusable Fetch Function (No Change) ---
 async function fetchData(endpoint, options = {}) { /* ... (same fetchData function) ... */ }
 
-// --- Authentication Functions --- (No Change - but could be moved to auth-module.js)
-function updateAuthStatus() { /* ... (same updateAuthStatus function) ... */ }
-function logoutUser() { /* ... (same logoutUser function, but call showModal on logout success) ... */ }
-
-// --- Restaurant Info Functions --- (No Change - but could be moved to restaurant-info-module.js)
-function loadRestaurantInfo() { /* ... (same loadRestaurantInfo function) ... */ }
-function updateRestaurantInfo() { /* ... (same updateRestaurantInfo function) ... */ }
-
-// --- Table Functions --- (No Change - but could be moved to table-module.js)
-function loadTables() { /* ... (same loadTables function - potentially enhance to display more data points) ... */ }
-function createTable() { /* ... (same createTable form submit handler function) ... */ }
-
-// --- Reservation Functions --- (No Change - but could be moved to reservation-module.js)
-function loadReservations() { /* ... (same loadReservations function - potentially enhance to display more data points) ... */ }
-function createReservation() { /* ... (same createReservation form submit handler function) ... */ }
-
-
-// --- Modal Dialog Functions ---
+// --- Modal Dialog Functions (No Change) ---
 const modalDialog = document.getElementById('modal-dialog');
 const modalMessage = document.getElementById('modal-message');
 const closeButton = document.querySelector('.close-button');
+function showModal(message) { /* ... (same showModal function) ... */ }
+function hideModal() { /* ... (same hideModal function) ... */ }
+closeButton.addEventListener('click', hideModal);
+window.addEventListener('click', function(event) { /* ... (same window click listener) ... */ });
 
-function showModal(message) {
-    modalMessage.textContent = message;
-    modalDialog.style.display = 'block';
+
+// --- Authentication Functions ---
+function updateAuthStatus() {
+    fetchData('/auth/status')
+        .then(data => {
+            const authStatusDisplayElements = document.querySelectorAll('#auth-status'); // Select all auth status elements
+            const logoutButtonElements = document.querySelectorAll('#logout-button'); // Select all logout buttons
+
+            authStatusDisplayElements.forEach(element => {
+                if (data && data.isAuthenticated) {
+                    element.textContent = `Logged in as ${data.user.email}`;
+                } else {
+                    element.innerHTML = `<a href="${API_BASE_URL}/auth/google">Login with Google</a>`;
+                }
+            });
+
+            logoutButtonElements.forEach(button => { // Update display for all logout buttons
+                button.style.display = data && data.isAuthenticated ? 'inline-block' : 'none';
+            });
+        });
 }
 
-function hideModal() {
-    modalDialog.style.display = 'none';
-}
-
-closeButton.addEventListener('click', hideModal); // Close modal on 'x' click
-
-window.addEventListener('click', function(event) { // Close modal if clicked outside
-    if (event.target == modalDialog) {
-        hideModal();
-    }
-});
-
-// --- Logout Functionality (Updated to use modal) ---
-logoutButton.addEventListener('click', function() {
+function logoutUser() {
     fetchData('/auth/logout')
         .then(() => {
             updateAuthStatus();
-            showModal('Logged out successfully.'); // Use modal for logout message
-            showPage('dashboard');
-        });
-});
-
-// --- Page Navigation (No Change) ---
-function showPage(pageId) { /* ... (same showPage function) ... */ }
-navLinks.forEach(link => { /* ... (same navLinks event listener setup) ... */ });
-
-// --- Mobile Menu Toggle (No Change) ---
-menuToggle.addEventListener('click', function() { /* ... (same menuToggle event listener) ... */ });
-
-
-// --- Dynamic Item Generation Example (Enhanced Tables Display - Example) ---
-function loadTables() {
-    fetchData('/api/tables')
-        .then(tables => {
-            if (tables && tables.length >= 15) { // Ensure at least 15 items for guideline
-                const tablesList = document.getElementById('tables-list');
-                tablesList.innerHTML = '<ul>' + tables.slice(0, 15).map(table => `
-                    <li>
-                        <strong>Table Name:</strong> ${table.name},
-                        <strong>Capacity:</strong> ${table.capacity},
-                        <strong>Status:</strong> Available, <!-- Example static data -->
-                        <strong>Last Updated:</strong> ${new Date().toLocaleTimeString()} <!-- Example dynamic data -->
-                    </li>`).join('') + '</ul>';
-            } else {
-                document.getElementById('tables-list').innerHTML = '<p>Not enough table data to display 15+ items. Please ensure your API returns sufficient data.</p>';
-            }
+            showModal('Logged out successfully.');
+            // No page redirect needed, auth status will update on all pages
         });
 }
 
-// --- Initial Load and Setup (No Change, but call loadTables, loadReservations, etc. after auth check if needed) ---
-updateAuthStatus();
-loadRestaurantInfo();
-loadTables(); // Load tables on tables page
-loadReservations(); // Load reservations on reservations page
-showPage('dashboard');
+// --- Restaurant Info Functions --- (Dashboard Specific)
+function loadRestaurantInfoDashboard() {
+    if (document.getElementById('restaurant-info-display')) { // Check if element exists on current page
+        fetchData('/api/restaurant-info')
+            .then(info => {
+                if (info) {
+                    const infoDisplay = document.getElementById('restaurant-info-display');
+                    infoDisplay.innerHTML = `
+                        <h3>${info.name || 'Restaurant Name'}</h3>
+                        <p>Address: ${info.address || 'No Address'}</p>
+                        <p>Phone: ${info.phone || 'No Phone'}</p>
+                    `;
+                    document.getElementById('restaurant-name-edit').value = info.name || '';
+                    document.getElementById('restaurant-address-edit').value = info.address || '';
+                    document.getElementById('restaurant-phone-edit').value = info.phone || '';
+                }
+            });
+    }
+}
+
+function updateRestaurantInfoDashboard() {
+    if (document.getElementById('edit-restaurant-info-form')) { // Check if form exists on current page
+        document.getElementById('edit-restaurant-info-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('restaurant-name-edit').value;
+            const address = document.getElementById('restaurant-address-edit').value;
+            const phone = document.getElementById('restaurant-phone-edit').value;
+
+            fetchData('/api/restaurant-info', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name, address: address, phone: phone })
+            }).then(updatedInfo => {
+                if (updatedInfo) {
+                    showModal('Restaurant information updated successfully!'); // Use modal
+                    loadRestaurantInfoDashboard();
+                }
+            });
+        });
+    }
+}
+
+
+// --- Table Functions --- (Dashboard Specific)
+function loadTablesDashboard() {
+    if (document.getElementById('tables-list')) { // Check if element exists on current page
+        fetchData('/api/tables')
+            .then(tables => {
+                if (tables && tables.length >= 15) {
+                    const tablesList = document.getElementById('tables-list');
+                    tablesList.innerHTML = '<ul>' + tables.slice(0, 15).map(table => `
+                        <li>
+                            <strong>Table Name:</strong> ${table.name},
+                            <strong>Capacity:</strong> ${table.capacity},
+                            <strong>Status:</strong> Available,
+                            <strong>Last Updated:</strong> ${new Date().toLocaleTimeString()}
+                        </li>`).join('') + '</ul>';
+                } else {
+                    document.getElementById('tables-list').innerHTML = '<p>Not enough table data to display 15+ items. Please ensure your API returns sufficient data.</p>';
+                }
+            });
+    }
+}
+
+function createTableDashboard() {
+    if (document.getElementById('create-table-form')) { // Check if form exists on current page
+        document.getElementById('create-table-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const tableName = document.getElementById('table-name').value;
+            const capacity = document.getElementById('capacity').value;
+
+            fetchData('/api/tables', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: tableName, capacity: parseInt(capacity) })
+            }).then(newTable => {
+                if (newTable) {
+                    showModal(`Table "${newTable.name}" created successfully!`); // Use modal
+                    loadTablesDashboard();
+                    document.getElementById('create-table-form').reset();
+                }
+            });
+        });
+    }
+}
+
+
+// --- Reservation Functions --- (Dashboard Specific)
+function loadReservationsDashboard() {
+    if (document.getElementById('reservations-list')) { // Check if element exists on current page
+        fetchData('/api/reservations')
+            .then(reservations => {
+                if (reservations) {
+                    const reservationsList = document.getElementById('reservations-list');
+                    reservationsList.innerHTML = '<ul>' + reservations.map(reservation => `<li>Reservation ID: ${reservation.id}, Table ID: ${reservation.tableId}, Guest: ${reservation.guestName}, Time: ${new Date(reservation.reservationTime).toLocaleString()}, Party Size: ${reservation.partySize}</li>`).join('') + '</ul>';
+                }
+            });
+    }
+}
+
+
+function createReservationDashboard() {
+     if (document.getElementById('create-reservation-form')) { // Check if form exists on current page
+        document.getElementById('create-reservation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const tableId = document.getElementById('reservation-table').value;
+            const guestName = document.getElementById('guest-name').value;
+            const reservationTime = document.getElementById('reservation-time').value;
+            const partySize = document.getElementById('reservation-party-size').value;
+
+            fetchData('/api/reservations', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ tableId: parseInt(tableId), guestName: guestName, reservationTime: reservationTime, partySize: parseInt(partySize) })
+            }).then(newReservation => {
+                if (newReservation) {
+                    showModal(`Reservation for "${newReservation.guestName}" created successfully!`); // Use modal
+                    loadReservationsDashboard();
+                    document.getElementById('create-reservation-form').reset();
+                }
+            });
+        });
+    }
+}
+
+
+// --- Mobile Menu Toggle (No Change) ---
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.navigation');
+menuToggle.addEventListener('click', function() {
+    navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
+});
+
+// --- Logout Button Event Listener (Attach to all logout buttons) ---
+const logoutButtonElements = document.querySelectorAll('#logout-button');
+logoutButtonElements.forEach(button => {
+    button.addEventListener('click', logoutUser);
+});
+
+
+// --- Initial Load and Setup (Page Specific Loaders) ---
+document.addEventListener('DOMContentLoaded', () => {
+    updateAuthStatus(); // Check auth status on every page load
+
+    if (document.getElementById('dashboard-page')) { // Check if on dashboard page
+        loadRestaurantInfoDashboard();
+        loadTablesDashboard();
+        loadReservationsDashboard();
+        updateRestaurantInfoDashboard();
+        createTableDashboard();
+        createReservationDashboard();
+    } else if (document.getElementById('about-page')) {
+        // No specific data loading for about page in this example
+    } else if (document.getElementById('home-search-form')) {
+        // Home page specific setup if needed - currently search form is handled by HTML submit
+    }
+});

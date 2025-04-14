@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "h1 h1"
+    "p p";
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 150px 1fr;
+}
+h1 {
+    grid-area: h1;
+  }
+  
+  p {
+    grid-area: p;
+  }

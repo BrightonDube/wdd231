@@ -1,16 +1,13 @@
-// script.js - Updated for Multi-Page Navigation and Logic
 
-// --- API Endpoint Base URL --- (No Change)
-const API_BASE_URL = 'YOUR_API_ENDPOINT_HERE'; // **REPLACE THIS!**
+const API_BASE_URL = 'https://tableresapi.onrender.com/';
 
-// --- Reusable Fetch Function (No Change) ---
-async function fetchData(endpoint, options = {}) { /* ... (same fetchData function) ... */ }
+async function fetchData(endpoint, options = {}) { 
 
-// --- Modal Dialog Functions (No Change) ---
+// --- Modal Dialog Functions ---
 const modalDialog = document.getElementById('modal-dialog');
 const modalMessage = document.getElementById('modal-message');
 const closeButton = document.querySelector('.close-button');
-function showModal(message) { /* ... (same showModal function) ... */ }
+function showModal(message) {  }
 function hideModal() { /* ... (same hideModal function) ... */ }
 closeButton.addEventListener('click', hideModal);
 window.addEventListener('click', function(event) { /* ... (same window click listener) ... */ });

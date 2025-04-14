@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    </html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description"
-            content="Table Whisperer - Restaurant Reservation System. Easily manage tables and reservations.">
-        <meta name="author" content="Brighton Dube">
-        <title>Table Whisperer - Restaurant Reservations</title>
-        <link rel="styleshee" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/style.css">    
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <!-- Social Media Meta Tags (Example - adjust as needed) -->
-        <meta property="og:title" content="Table Whisperer - Restaurant Reservations">
-        <meta property="og:description"
-            content="Effortlessly manage your restaurant's tables and reservations with Table Whisperer.">
-        <meta property="og:image" content="url-to-your-site-logo.png"> <!-- Replace with your logo URL -->
-        <meta property="og:url" content="https://brightondube.github.io/wdd231/table_whisperer/">
-        <meta name="twitter:card" content="summary_large_image">
-    
-        <script src="scripts/script.js" type="module" defer>  </script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Table Whisperer - Restaurant Reservation System. Easily manage tables and reservations.">
+    <meta name="author" content="Brighton Dube">
+    <title>Table Whisperer - Restaurant Reservations</title>
+    <link rel="styleshee" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Social Media Meta Tags (Example - adjust as needed) -->
+    <meta property="og:title" content="Table Whisperer - Restaurant Reservations">
+    <meta property="og:description"
+        content="Effortlessly manage your restaurant's tables and reservations with Table Whisperer.">
+    <meta property="og:image" content="url-to-your-site-logo.png"> <!-- Replace with your logo URL -->
+    <meta property="og:url" content="https://brightondube.github.io/wdd231/table_whisperer/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="scripts/script.js" type="module" defer>  </script>
+</head>
 <body>
 
     <header class="header">
@@ -42,20 +41,18 @@
         </button>
     </header>
 
-    <main class="main-content">
+    <main class="main-content" id="dashboard-content" style="display:none;">
         <h1 class="page-title">Restaurant Management Dashboard</h1>
 
         <section id="dashboard-page" class="page active">
             <h2>Restaurant Information</h2>
             <div id="restaurant-info-display">
-                <!-- Restaurant info will be loaded here -->
             </div>
         </section>
 
         <section id="tables-page" class="page active">
             <h2>Tables</h2>
             <div id="tables-list">
-                <!-- Tables will be listed here -->
             </div>
             <h3>Create New Table</h3>
             <form id="create-table-form" class="data-form" aria-label="Create Table Form">
@@ -74,7 +71,6 @@
         <section id="reservations-page" class="page active">
             <h2>Reservations</h2>
             <div id="reservations-list">
-                <!-- Reservations will be listed here -->
             </div>
             <h3>Create New Reservation</h3>
             <form id="create-reservation-form" class="data-form" aria-label="Create Reservation Form">
@@ -139,6 +135,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js" type="module"></script>
+    <script src="scripts/dashboard-script.js" type="module"></script>
 </body>
 </html>

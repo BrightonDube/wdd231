@@ -1,99 +1,109 @@
-/* style.css - Updated CSS (Include all from previous, and add/modify these) */
-
-/* ... (Include ALL CSS from the previous "responsive" style.css) ... */
-
-/* Modifications and Additions for Design Principles and Modals */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    /* Improved Typography for Usability */
-    font-family: 'Arial', sans-serif; /* More common and readable default font */
-    font-size: 16px; /* Base font size */
-    color: #333;
-    background-color: #f8f8f8; /* Slightly lighter background */
-    margin: 0; /* Reset body margin */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #3d405b; /* Dark Navy Text */
+    background-color: #f4f1de; /* Light Cream Background */
+    margin: 0;
 }
 
 .header {
-    background-color: #fff; /* White header background for better contrast */
-    border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
-    padding: 1.5rem 2rem; /* Increased padding for better spacing */
-    /* ... (rest of header styles - keep same flexbox layout) ... */
+    background-color: #ffffff; /* White Section Background */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-size: 1.8rem; /* Slightly larger logo */
-    font-weight: 700; /* Bolder logo font */
-    color: #007bff; /* Example brand color - adjust as needed */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e07a5f; /* Salmon Red Primary Color */
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+}
+
+.navigation li {
+    margin-left: 1.5rem;
 }
 
 .navigation a {
-    color: #555; /* Slightly softer navigation link color */
-    padding: 0.7rem 1rem; /* Adjust padding for nav links */
-    border-radius: 4px; /* Rounded corners for nav links */
-    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transitions */
+    text-decoration: none;
+    color: #3d405b; /* Dark Navy Text */
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .navigation a:hover, .navigation a.active-nav {
-    background-color: #e0e0e0; /* Hover/Active background color */
-    color: #007bff; /* Hover/Active text color */
+    background-color: #e07a5f; /* Salmon Red Primary Color */
+    color: #ffffff; /* White Section Background */
 }
 
 .page-title {
-    font-size: 2.2rem; /* Larger page title */
-    color: #222; /* Darker page title color */
+    font-size: 2.2rem;
+    color: #e07a5f; /* Salmon Red Primary Color */
     margin-bottom: 1.5rem;
-    text-align: center; /* Center align page title */
+    text-align: center;
 }
 
 .main-content {
     padding: 2rem;
-    max-width: 1200px; /* Limit content width for larger screens */
-    margin: 0 auto; /* Center content on larger screens */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .search-area, .restaurant-listings, .sidebar, .data-form, #restaurant-info-display, #tables-list, #reservations-list, #restaurant-details {
-    background-color: #fff; /* White backgrounds */
-    border: 1px solid #e0e0e0; /* Lighter border */
-    border-radius: 8px; /* More rounded corners */
-    padding: 2rem; /* Increased padding for sections */
-    margin-bottom: 2rem; /* Increased bottom margin */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle box shadow for depth */
+    background-color: #ffffff; /* White Section Background */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 h2, h3 {
-    color: #333; /* Darker section/subsection headings */
+    color: #e07a5f; /* Salmon Red Primary Color */
     margin-bottom: 1.2rem;
 }
 
-/* Action Buttons - Enhanced Styles */
 .action-button {
-    padding: 1rem 2rem; /* Increased button padding */
-    border-radius: 6px; /* More rounded buttons */
-    font-size: 1.1rem; /* Slightly larger button font */
-    font-weight: 600; /* Semi-bold button font */
-    transition: transform 0.1s ease, box-shadow 0.2s ease; /* Button hover effects */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Button shadow */
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .action-button:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .action-button.primary {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
+    background-color: #e07a5f; /* Salmon Red Primary Color */
+    color: #ffffff; /* White Section Background */
+    border-color: #e07a5f; /* Salmon Red Primary Color */
 }
 
 .action-button.primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #c86a52; /* Darker Salmon Red */
+    border-color: #c86a52; /* Darker Salmon Red */
 }
 
 .action-button.danger {
     background-color: #dc3545;
-    color: #fff;
+    color: #ffffff; /* White Section Background */
     border-color: #dc3545;
 }
 
@@ -102,77 +112,87 @@ h2, h3 {
     border-color: #c82333;
 }
 
-/* Input Groups and Form Fields */
 .input-group label {
-    font-weight: 500; /* Slightly lighter label font-weight */
-    color: #444; /* Darker label color */
-    margin-bottom: 0.5rem; /* Increased label margin */
+    font-weight: 500;
+    color: #3d405b; /* Dark Navy Text */
+    margin-bottom: 0.5rem;
 }
 
 .input-group input, .input-group select, .input-group textarea {
-    padding: 0.8rem; /* Increased input padding */
-    border-radius: 6px; /* Rounded input corners */
+    padding: 0.8rem;
+    border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
-    color: #555; /* Input text color */
+    color: #555;
 }
 
-/* Lists - Tables and Reservations */
 #tables-list ul, #reservations-list ul {
     list-style: none;
     padding-left: 0;
 }
 
 #tables-list li, #reservations-list li {
-    padding: 0.8rem 0; /* Increased list item padding */
-    border-bottom: 1px dotted #ddd; /* Lighter dotted border */
-    color: #666; /* List item text color */
+    padding: 0.8rem 0;
+    border-bottom: 1px dotted #ddd;
+    color: #666;
 }
 
-/* Footer - More refined footer styles */
 .footer {
-    background-color: #f0f0f0; /* Lighter footer background */
-    border-top: 1px solid #e0e0e0; /* Subtle top border for footer */
+    background-color: #f4f1de; /* Light Cream Background */
+    border-top: 1px solid #e0e0e0;
     padding: 1.5rem 2rem;
-    color: #777; /* Lighter footer text color */
+    color: #777;
 }
 
 .footer-content {
-    /* ... (keep flexbox layout) ... */
-    font-size: 0.9rem; /* Slightly smaller footer font size */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.footer-nav li {
+    margin-left: 1.5rem;
 }
 
 .footer-nav a {
     color: #777;
-    transition: color 0.2s ease; /* Hover transition for footer links */
+    transition: color 0.2s ease;
 }
 
 .footer-nav a:hover {
     color: #555;
 }
 
-/* Modal Dialog Styles */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: #ffffff; /* White Section Background */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    position: relative; /* For close button positioning */
+    position: relative;
 }
 
 .close-button {
@@ -195,12 +215,105 @@ h2, h3 {
     padding: 15px 0;
 }
 
-
-/* --- Media Queries - No significant changes needed, but review and ensure responsiveness at 320px and larger screens --- */
 @media (min-width: 768px) {
-    /* ... (Keep desktop media query styles - for header, main-content layout, etc.) ... */
+    .header {
+        flex-direction: row;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .navigation {
+        display: block !important;
+    }
+
+    .main-content {
+        flex-direction: row;
+    }
+
+    .restaurant-listings {
+        flex: 2;
+        margin-right: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .sidebar {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .footer-nav ul {
+        margin-top: 0;
+        justify-content: flex-start;
+    }
+    .data-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .data-form button[type="submit"] {
+        grid-column: span 2;
+    }
 }
 
 @media (max-width: 767px) {
-    /* ... (Keep mobile media query styles - header stacking, mobile navigation, etc.) ... */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .navigation {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation li {
+        margin-left: 0;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+    .navigation li:last-child {
+        border-bottom: none;
+    }
+
+    .navigation a {
+        padding: 1rem;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .restaurant-listings {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .sidebar {
+        margin-bottom: 1.5rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav ul {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
 }

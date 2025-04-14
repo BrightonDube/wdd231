@@ -1,23 +1,117 @@
-.container {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-areas:
-    "h1 h1"
-    "p p";
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 250px 1fr;
-  gap: 1rem;
-}
-h1 {
-    grid-area: h1;
+/* Base styles */
+.grid-card {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem;
+    min-height: 100vh;
   }
   
-p {
-    grid-area: p;
+  .card {
+    display: grid;
+    grid-template-areas:
+      "image"
+      "title"
+      "address"
+      "description"
+      "button";
+    grid-template-rows: auto auto auto 1fr auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: white;
+    height: 100%;
   }
-
-.grid-card {
-    text-align: center;
+  
+  .card-image {
+    grid-area: image;
+    margin: 0;
+    overflow: hidden;
+    background: #f5f5f5;
+    aspect-ratio: 16/9;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card img[src] {
+    opacity: 1;
+  }
+  
+  .card h2 {
+    grid-area: title;
+    margin: 0.5rem 1rem 0;
+    font-size: 1.25rem;
+  }
+  
+  .card address {
+    grid-area: address;
+    margin: 0 1rem;
+    font-style: normal;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .card p {
+    grid-area: description;
+    margin: 0.5rem 1rem;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  .learn-more {
+    grid-area: button;
     margin: 1rem;
-}
+    padding: 0.5rem 1rem;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-self: start;
+  }
+  
+  .error {
+    color: #d32f2f;
+    text-align: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+  }
+  
+  /* Medium screens (641px-1024px) */
+  @media (min-width: 641px) {
+    .grid-card {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card img:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Large screens (1025px+) */
+  @media (min-width: 1025px) {
+    .grid-card {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .card img:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Fallback for browsers without IntersectionObserver */
+  .no-js .card img {
+    opacity: 1;
+  }

@@ -1,0 +1,60 @@
+{
+  "cards": [
+    {
+      "title": "Sun City Resort",
+      "address": "Rustenburg, North West Province",
+      "description": "Luxury resort complex with casinos, golf courses, water parks, and the Valley of Waves.",
+      "photo": "images/suncity.webp",
+      "buttonText": "Book Now"
+    },
+    {
+      "title": "Soweto",
+      "address": "South Western Townships, Johannesburg",
+      "description": "Vibrant township rich in history and culture, home to the famous Vilakazi Street.",
+      "photo": "images/soweto.webp",
+      "buttonText": "Explore"
+    },
+    {
+      "title": "Mandela House",
+      "address": "8115 Vilakazi Street, Orlando West, Soweto",
+      "description": "Former home of Nelson Mandela, now a museum showcasing his life and legacy.",
+      "photo": "images/mandelahouse.webp",
+      "buttonText": "Visit"
+    },
+    {
+      "title": "Gold Reef City",
+      "address": "Northern Parkway, Johannesburg",
+      "description": "Theme park and casino complex built on an old gold mine with thrilling rides.",
+      "photo": "images/goldreef.webp",
+      "buttonText": "Buy Tickets"
+    },
+    {
+      "title": "Cradle of Humankind",
+      "address": "North West Province",
+      "description": "UNESCO World Heritage Site with limestone caves containing hominid fossils.",
+      "photo": "images/cradleofhumankind.webp",
+      "buttonText": "Discover"
+    },
+    {
+      "title": "Constitution Hill",
+      "address": "11 Kotze Street, Braamfontein, Johannesburg",
+      "description": "Historical site housing the Constitutional Court and Old Fort prison complex.",
+      "photo": "images/constitutionhill.webp",
+      "buttonText": "Tour"
+    },
+    {
+      "title": "APARTHEID Museum",
+      "address": "Northern Parkway, Gold Reef City, Johannesburg",
+      "description": "Powerful museum chronicling South Africa's apartheid era and struggle for freedom.",
+      "photo": "images/apa_museum.webp",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "Chobe Park",
+      "address": "Johannesburg Metropolitan Area",
+      "description": "Beautiful urban park offering nature trails and wildlife viewing opportunities.",
+      "photo": "images/chobenpark.webp",
+      "buttonText": "Explore"
+    }
+  ]
+}

@@ -62,13 +62,35 @@ body {
     margin: 0 auto;
 }
 
-.search-area, .restaurant-listings, .sidebar, .data-form, #restaurant-info-display, #tables-list, #reservations-list, #restaurant-details {
+.search-area, .restaurant-listings, .sidebar, .data-form, #restaurant-info-display, #tables-list, #reservations-list, #restaurant-details, .about-content, .hero-section {
     background-color: #ffffff; /* White Section Background */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.hero-section {
+    text-align: center;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+
+.about-content h2 {
+    color: #e07a5f;
+    margin-bottom: 1rem;
+}
+
+.about-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1rem;
 }
 
 h2, h3 {
@@ -112,6 +134,26 @@ h2, h3 {
     border-color: #c82333;
 }
 
+.data-form {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+.data-form h3 {
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
 .input-group label {
     font-weight: 500;
     color: #3d405b; /* Dark Navy Text */
@@ -125,6 +167,7 @@ h2, h3 {
     font-size: 1rem;
     color: #555;
 }
+
 
 #tables-list ul, #reservations-list ul {
     list-style: none;
@@ -215,6 +258,68 @@ h2, h3 {
     padding: 15px 0;
 }
 
+
+/* Updated Form Styling for Grid Layout */
+.search-area .search-form {
+    display: grid;
+    grid-template-areas:
+        "cuisine-label cuisine-input"
+        "location-label location-input"
+        "date-label date-input"
+        "time-label time-input"
+        "party-size-label party-size-input"
+        "... button"; /* ... for empty label column */
+    grid-template-columns: auto 1fr; /* Label width auto, input takes remaining space */
+    gap: 1rem;
+    padding: 2rem; /* Add padding to form itself */
+    background-color: #ffffff; /* White Section Background */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.search-area .form-row label {
+    text-align: right; /* Align labels to the right */
+    padding-right: 1rem; /* Add some right padding to labels */
+    grid-column: 1; /* Ensure labels are in the first column */
+}
+
+.search-area .form-row input,
+.search-area .form-row select {
+    grid-column: 2; /* Ensure inputs/selects are in the second column */
+    width: 100%; /* Make inputs/selects take full width of their column */
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #555;
+}
+
+.search-area #cuisine-row { grid-area: cuisine-row; }
+.search-area #cuisine-row label { grid-area: cuisine-label; }
+.search-area #cuisine-row input { grid-area: cuisine-input; }
+
+.search-area #location-row { grid-area: location-row; }
+.search-area #location-row label { grid-area: location-label; }
+.search-area #location-row input { grid-area: location-input; }
+
+.search-area #date-row { grid-area: date-row; }
+.search-area #date-row label { grid-area: date-label; }
+.search-area #date-row input { grid-area: date-input; }
+
+.search-area #time-row { grid-area: time-row; }
+.search-area #time-row label { grid-area: time-label; }
+.search-area #time-row select { grid-area: time-input; }
+
+.search-area #party-size-row { grid-area: party-size-row; }
+.search-area #party-size-row label { grid-area: party-size-label; }
+.search-area #party-size-row select { grid-area: party-size-input; }
+
+.search-area #button-row { grid-area: button-row; grid-column: 1 / span 2; text-align: center; /* Center button */ } /* Span 2 columns */
+.search-area #button-row button { width: auto; /* Auto width for button */ padding: 1rem 2rem; } /* Adjust button padding */
+
+
 @media (min-width: 768px) {
     .header {
         flex-direction: row;
@@ -257,6 +362,9 @@ h2, h3 {
     }
     .data-form button[type="submit"] {
         grid-column: span 2;
+    }
+     .search-area .search-form {
+        padding: 2rem; /* Add padding to form itself */
     }
 }
 
@@ -316,4 +424,8 @@ h2, h3 {
         margin-top: 0.5rem;
         justify-content: center;
     }
+     .search-area .search-form {
+        padding: 1.5rem; /* Slightly less padding on mobile */
+    }
+     .search-area #button-row { text-align: center; /* Center button on mobile */ }
 }

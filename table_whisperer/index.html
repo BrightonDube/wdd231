@@ -7,7 +7,7 @@
         content="Table Whisperer - Restaurant Reservation System. Easily manage tables and reservations.">
     <meta name="author" content="Brighton Dube">
     <title>Table Whisperer - Restaurant Reservations</title>
-    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="styleshee" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Table Whisperer - Restaurant Reservations">
     <meta property="og:description"
         content="Effortlessly manage your restaurant's tables and reservations with Table Whisperer.">
-    <meta property="og:image" content="url-to-your-site-logo.png"> 
+    <meta property="og:image" content="url-to-your-site-logo.png"> <!-- Replace with your logo URL -->
     <meta property="og:url" content="https://brightondube.github.io/wdd231/table_whisperer/">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -50,33 +50,42 @@
         <section id="search-area" class="search-area">
             <h2>Find a Restaurant</h2>
             <form id="home-search-form" class="search-form" action="dashboard.html" method="get">
-                <div class="input-group">
-                    <label for="cuisine">Cuisine:</label>
-                    <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Mexican">
+                <div class="form-grid">
+                    <div class="form-row" id="cuisine-row">
+                        <label for="cuisine">Cuisine:</label>
+                        <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Mexican">
+                    </div>
+
+                    <div class="form-row" id="location-row">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" placeholder="City or Zip Code">
+                    </div>
+
+                    <div class="form-row" id="date-row">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+
+                    <div class="form-row" id="time-row">
+                        <label for="time">Time:</label>
+                        <select id="time" name="time">
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="7:30 PM">7:30 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row" id="party-size-row">
+                        <label for="party-size">Party Size:</label>
+                        <select id="party-size" name="party-size">
+                            <option value="1">1 person</option>
+                            <option value="2">2 people</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row" id="button-row">
+                        <button type="submit" class="action-button primary">Search Restaurants</button>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="location">Location:</label>
-                    <input type="text" id="location" name="location" placeholder="City or Zip Code">
-                </div>
-                <div class="input-group">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date">
-                </div>
-                <div class="input-group">
-                    <label for="time">Time:</label>
-                    <select id="time" name="time">
-                        <option value="7:00 PM">7:00 PM</option>
-                        <option value="7:30 PM">7:30 PM</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="party-size">Party Size:</label>
-                    <select id="party-size" name="party-size">
-                        <option value="1">1 person</option>
-                        <option value="2">2 people</option>
-                    </select>
-                </div>
-                <button type="submit" class="action-button primary">Search Restaurants</button>
             </form>
         </section>
 

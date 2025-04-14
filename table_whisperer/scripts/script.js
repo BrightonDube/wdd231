@@ -1,51 +1,77 @@
+export { updateAuthStatus, loadRestaurantInfoDashboard, loadTablesDashboard, loadReservationsDashboard, updateRestaurantInfoDashboard, createTableDashboard, createReservationDashboard, API_BASE_URL };
 
-const API_BASE_URL = 'https://tableresapi.onrender.com/';
+const API_BASE_URL = 'https://tableresapi.onrender.com';
 
-async function fetchData(endpoint, options = {}) { 
+async function fetchData(endpoint, options = {}) {
+    try {
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert(`Error fetching data: ${error.message}`);
+        return null;
+    }
+}
 
-// --- Modal Dialog Functions ---
 const modalDialog = document.getElementById('modal-dialog');
 const modalMessage = document.getElementById('modal-message');
 const closeButton = document.querySelector('.close-button');
-function showModal(message) {  }
-function hideModal() { /* ... (same hideModal function) ... */ }
-closeButton.addEventListener('click', hideModal);
-window.addEventListener('click', function(event) { /* ... (same window click listener) ... */ });
-
-
-// --- Authentication Functions ---
-function updateAuthStatus() {
-    fetchData('/auth/status')
-        .then(data => {
-            const authStatusDisplayElements = document.querySelectorAll('#auth-status'); // Select all auth status elements
-            const logoutButtonElements = document.querySelectorAll('#logout-button'); // Select all logout buttons
-
-            authStatusDisplayElements.forEach(element => {
-                if (data && data.isAuthenticated) {
-                    element.textContent = `Logged in as ${data.user.email}`;
-                } else {
-                    element.innerHTML = `<a href="${API_BASE_URL}/auth/google">Login with Google</a>`;
-                }
-            });
-
-            logoutButtonElements.forEach(button => { // Update display for all logout buttons
-                button.style.display = data && data.isAuthenticated ? 'inline-block' : 'none';
-            });
-        });
+function showModal(message) {
+    modalMessage.textContent = message;
+    modalDialog.style.display = 'block';
 }
+
+function hideModal() {
+    modalDialog.style.display = 'none';
+}
+
+closeButton.addEventListener('click', hideModal);
+window.addEventListener('click', function(event) {
+    if (event.target == modalDialog) {
+        hideModal();
+    }
+});
+
+async function updateAuthStatus() {
+    try {
+        const data = await fetchData('/auth/status');
+        const isAuthenticated = data && data.isAuthenticated;
+        const authStatusDisplayElements = document.querySelectorAll('#auth-status');
+        const logoutButtonElements = document.querySelectorAll('#logout-button');
+
+        authStatusDisplayElements.forEach(element => {
+            if (isAuthenticated) {
+                element.textContent = `Logged in as ${data.user.email}`;
+            } else {
+                element.innerHTML = `<a href="${API_BASE_URL}/auth/google">Login with Google</a>`;
+            }
+        });
+
+        logoutButtonElements.forEach(button => {
+            button.style.display = isAuthenticated ? 'inline-block' : 'none';
+        });
+        return isAuthenticated;
+
+    } catch (error) {
+        console.error("Error checking authentication status:", error);
+        return false;
+    }
+}
+
 
 function logoutUser() {
     fetchData('/auth/logout')
         .then(() => {
             updateAuthStatus();
             showModal('Logged out successfully.');
-            // No page redirect needed, auth status will update on all pages
         });
 }
 
-// --- Restaurant Info Functions --- (Dashboard Specific)
 function loadRestaurantInfoDashboard() {
-    if (document.getElementById('restaurant-info-display')) { // Check if element exists on current page
+    if (document.getElementById('restaurant-info-display')) {
         fetchData('/api/restaurant-info')
             .then(info => {
                 if (info) {
@@ -64,7 +90,7 @@ function loadRestaurantInfoDashboard() {
 }
 
 function updateRestaurantInfoDashboard() {
-    if (document.getElementById('edit-restaurant-info-form')) { // Check if form exists on current page
+    if (document.getElementById('edit-restaurant-info-form')) {
         document.getElementById('edit-restaurant-info-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('restaurant-name-edit').value;
@@ -77,7 +103,7 @@ function updateRestaurantInfoDashboard() {
                 body: JSON.stringify({ name: name, address: address, phone: phone })
             }).then(updatedInfo => {
                 if (updatedInfo) {
-                    showModal('Restaurant information updated successfully!'); // Use modal
+                    showModal('Restaurant information updated successfully!');
                     loadRestaurantInfoDashboard();
                 }
             });
@@ -85,10 +111,8 @@ function updateRestaurantInfoDashboard() {
     }
 }
 
-
-// --- Table Functions --- (Dashboard Specific)
 function loadTablesDashboard() {
-    if (document.getElementById('tables-list')) { // Check if element exists on current page
+    if (document.getElementById('tables-list')) {
         fetchData('/api/tables')
             .then(tables => {
                 if (tables && tables.length >= 15) {
@@ -108,7 +132,7 @@ function loadTablesDashboard() {
 }
 
 function createTableDashboard() {
-    if (document.getElementById('create-table-form')) { // Check if form exists on current page
+    if (document.getElementById('create-table-form')) {
         document.getElementById('create-table-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const tableName = document.getElementById('table-name').value;
@@ -120,7 +144,7 @@ function createTableDashboard() {
                 body: JSON.stringify({ name: tableName, capacity: parseInt(capacity) })
             }).then(newTable => {
                 if (newTable) {
-                    showModal(`Table "${newTable.name}" created successfully!`); // Use modal
+                    showModal(`Table "${newTable.name}" created successfully!`);
                     loadTablesDashboard();
                     document.getElementById('create-table-form').reset();
                 }
@@ -129,10 +153,8 @@ function createTableDashboard() {
     }
 }
 
-
-// --- Reservation Functions --- (Dashboard Specific)
 function loadReservationsDashboard() {
-    if (document.getElementById('reservations-list')) { // Check if element exists on current page
+    if (document.getElementById('reservations-list')) {
         fetchData('/api/reservations')
             .then(reservations => {
                 if (reservations) {
@@ -143,9 +165,8 @@ function loadReservationsDashboard() {
     }
 }
 
-
 function createReservationDashboard() {
-     if (document.getElementById('create-reservation-form')) { // Check if form exists on current page
+     if (document.getElementById('create-reservation-form')) {
         document.getElementById('create-reservation-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const tableId = document.getElementById('reservation-table').value;
@@ -159,7 +180,7 @@ function createReservationDashboard() {
                 body: JSON.stringify({ tableId: parseInt(tableId), guestName: guestName, reservationTime: reservationTime, partySize: parseInt(partySize) })
             }).then(newReservation => {
                 if (newReservation) {
-                    showModal(`Reservation for "${newReservation.guestName}" created successfully!`); // Use modal
+                    showModal(`Reservation for "${newReservation.guestName}" created successfully!`);
                     loadReservationsDashboard();
                     document.getElementById('create-reservation-form').reset();
                 }
@@ -168,26 +189,21 @@ function createReservationDashboard() {
     }
 }
 
-
-// --- Mobile Menu Toggle (No Change) ---
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.navigation');
 menuToggle.addEventListener('click', function() {
     navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
 });
 
-// --- Logout Button Event Listener (Attach to all logout buttons) ---
 const logoutButtonElements = document.querySelectorAll('#logout-button');
 logoutButtonElements.forEach(button => {
     button.addEventListener('click', logoutUser);
 });
 
-
-// --- Initial Load and Setup (Page Specific Loaders) ---
 document.addEventListener('DOMContentLoaded', () => {
-    updateAuthStatus(); // Check auth status on every page load
+    updateAuthStatus();
 
-    if (document.getElementById('dashboard-page')) { // Check if on dashboard page
+    if (document.getElementById('dashboard-page')) {
         loadRestaurantInfoDashboard();
         loadTablesDashboard();
         loadReservationsDashboard();
@@ -195,8 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         createTableDashboard();
         createReservationDashboard();
     } else if (document.getElementById('about-page')) {
-        // No specific data loading for about page in this example
     } else if (document.getElementById('home-search-form')) {
-        // Home page specific setup if needed - currently search form is handled by HTML submit
     }
 });

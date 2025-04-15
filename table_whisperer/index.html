@@ -6,8 +6,15 @@
     <meta name="description"
         content="Table Whisperer - Restaurant Reservation System. Easily manage tables and reservations.">
     <meta name="author" content="Brighton Dube">
+    <meta name="keywords" content="restaurant reservations, table booking, dining, Table Whisperer">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Table Whisperer">
+    <meta name="twitter:title" content="Table Whisperer - Restaurant Reservations">
+    <meta name="twitter:description" content="Effortlessly manage your restaurant's tables and reservations with Table Whisperer.">
+    <meta name="twitter:image" content="url-to-your-site-logo.png">
     <title>Table Whisperer - Restaurant Reservations</title>
-    <link rel="styleshee" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -29,7 +36,7 @@
         <div class="logo">Table Whisperer</div>
         <nav class="navigation" aria-label="Main Navigation">
             <ul>
-                <li><a href="index.html" class="active-nav">Home</a></li>
+                <li><a href="index.html" class="active-nav" aria-current="page">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="about.html">About</a></li>
                 <li id="auth-status"></li>
@@ -63,12 +70,13 @@
 
                     <div class="form-row" id="date-row">
                         <label for="date">Date:</label>
-                        <input type="date" id="date" name="date">
+                        <input type="date" id="date" name="date" placeholder="Select a date" required>
                     </div>
 
                     <div class="form-row" id="time-row">
                         <label for="time">Time:</label>
-                        <select id="time" name="time">
+                        <select id="time" name="time" required>
+                            <option value="" disabled selected>Select a time</option>
                             <option value="7:00 PM">7:00 PM</option>
                             <option value="7:30 PM">7:30 PM</option>
                         </select>
@@ -97,8 +105,8 @@
             <nav class="footer-nav" aria-label="Footer Navigation">
                 <ul>
                     <li><a href="attributions.html" target="blank">Attributions</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a></li>
+                    <li><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </nav>

@@ -291,28 +291,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const closeContactModal = document.getElementById('close-contact-modal');
 
   // Open the contact modal
-  contactLink.addEventListener('click', (event) => {
-      event.preventDefault();
-      contactModal.style.display = 'flex';
+  contactLink.addEventListener('click', event => {
+    event.preventDefault();
+    contactModal.style.display = 'flex';
   });
 
   // Close the contact modal
   closeContactModal.addEventListener('click', () => {
-      contactModal.style.display = 'none';
+    contactModal.style.display = 'none';
   });
 
   // Close the modal when clicking outside the modal content
-  window.addEventListener('click', (event) => {
-      if (event.target === contactModal) {
-          contactModal.style.display = 'none';
-      }
+  window.addEventListener('click', event => {
+    if (event.target === contactModal) {
+      contactModal.style.display = 'none';
+    }
   });
 
   const contactLinks = document.querySelectorAll('a[href="#"]:not([id])'); // Select all <a href="#"> without an id
 
   if (contactModal && closeContactModal && contactLinks.length > 0) {
     contactLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
+      link.addEventListener('click', event => {
         event.preventDefault();
         contactModal.style.display = 'flex';
       });
@@ -322,10 +322,33 @@ document.addEventListener('DOMContentLoaded', async () => {
       contactModal.style.display = 'none';
     });
 
-    window.addEventListener('click', (event) => {
+    window.addEventListener('click', event => {
       if (event.target === contactModal) {
         contactModal.style.display = 'none';
       }
+    });
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Collect form data
+      const formData = {
+        name: contactForm.name.value,
+        email: contactForm.email.value,
+        message: contactForm.message.value
+      };
+
+      // Show the success message in the modal dialog
+      showModal(
+        'Thank you, ' + formData.name + '! Your message has been sent.'
+      );
+
+      // Close the contact modal and reset the form
+      document.getElementById('contact-modal').style.display = 'none';
+      contactForm.reset();
     });
   }
 });

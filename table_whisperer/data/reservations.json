@@ -1,0 +1,112 @@
+[
+    {
+      "id": 1,
+      "tableNumber": 3,
+      "customerName": "John Smith",
+      "customerPhone": "555-111-2222",
+      "customerEmail": "john.smith@example.com",
+      "reservationDateTime": "2023-11-15T19:00:00",
+      "partySize": 4,
+      "status": "confirmed",
+      "notes": "Anniversary celebration"
+    },
+    {
+      "id": 2,
+      "tableNumber": 5,
+      "customerName": "Sarah Johnson",
+      "customerPhone": "555-222-3333",
+      "customerEmail": "sarah.j@example.com",
+      "reservationDateTime": "2023-11-16T20:00:00",
+      "partySize": 6,
+      "status": "confirmed",
+      "notes": "Business dinner"
+    },
+    {
+      "id": 3,
+      "tableNumber": 8,
+      "customerName": "Michael Brown",
+      "customerPhone": "555-333-4444",
+      "customerEmail": "michael.b@example.com",
+      "reservationDateTime": "2023-11-17T18:30:00",
+      "partySize": 2,
+      "status": "confirmed",
+      "notes": "Wheelchair access needed"
+    },
+    {
+      "id": 4,
+      "tableNumber": 12,
+      "customerName": "Emily Davis",
+      "customerPhone": "555-444-5555",
+      "customerEmail": "emily.d@example.com",
+      "reservationDateTime": "2023-11-18T19:30:00",
+      "partySize": 4,
+      "status": "pending",
+      "notes": "Birthday party"
+    },
+    {
+      "id": 5,
+      "tableNumber": 15,
+      "customerName": "Robert Wilson",
+      "customerPhone": "555-555-6666",
+      "customerEmail": "robert.w@example.com",
+      "reservationDateTime": "2023-11-19T20:00:00",
+      "partySize": 6,
+      "status": "confirmed",
+      "notes": ""
+    },
+    {
+      "id": 6,
+      "tableNumber": 20,
+      "customerName": "Jennifer Lee",
+      "customerPhone": "555-666-7777",
+      "customerEmail": "jennifer.l@example.com",
+      "reservationDateTime": "2023-11-20T19:00:00",
+      "partySize": 6,
+      "status": "confirmed",
+      "notes": "Vegetarian options needed"
+    },
+    {
+      "id": 7,
+      "tableNumber": 22,
+      "customerName": "David Miller",
+      "customerPhone": "555-777-8888",
+      "customerEmail": "david.m@example.com",
+      "reservationDateTime": "2023-11-21T18:00:00",
+      "partySize": 10,
+      "status": "confirmed",
+      "notes": "Company holiday party"
+    },
+    {
+      "id": 8,
+      "tableNumber": 25,
+      "customerName": "Lisa Taylor",
+      "customerPhone": "555-888-9999",
+      "customerEmail": "lisa.t@example.com",
+      "reservationDateTime": "2023-11-22T19:30:00",
+      "partySize": 4,
+      "status": "pending",
+      "notes": "Allergic to shellfish"
+    },
+    {
+      "id": 9,
+      "tableNumber": 28,
+      "customerName": "James Anderson",
+      "customerPhone": "555-999-0000",
+      "customerEmail": "james.a@example.com",
+      "reservationDateTime": "2023-11-23T20:00:00",
+      "partySize": 6,
+      "status": "confirmed",
+      "notes": "Engagement party"
+    },
+    {
+      "id": 10,
+      "tableNumber": 30,
+      "customerName": "Patricia Thomas",
+      "customerPhone": "555-000-1111",
+      "customerEmail": "patricia.t@example.com",
+      "reservationDateTime": "2023-11-24T19:00:00",
+      "partySize": 8,
+      "status": "confirmed",
+      "notes": "High chair needed"
+    }
+  ]

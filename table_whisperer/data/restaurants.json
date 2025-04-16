@@ -1,0 +1,202 @@
+[
+    {
+      "id": 1,
+      "name": "La Bella Italia",
+      "address": "123 Pasta Street",
+      "phone": "555-123-4567",
+      "city": "New York",
+      "cuisine": "Italian",
+      "image": "italian-restaurant.jpg",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "name": "Tokyo Sushi",
+      "address": "456 Fish Avenue",
+      "phone": "555-234-5678",
+      "city": "Los Angeles",
+      "cuisine": "Japanese",
+      "image": "sushi-restaurant.jpg",
+      "rating": 4.7
+    },
+    {
+      "id": 3,
+      "name": "El Sombrero",
+      "address": "789 Taco Lane",
+      "phone": "555-345-6789",
+      "city": "Chicago",
+      "cuisine": "Mexican",
+      "image": "mexican-restaurant.jpg",
+      "rating": 4.2
+    },
+    {
+      "id": 4,
+      "name": "Le Petit Paris",
+      "address": "101 Croissant Blvd",
+      "phone": "555-456-7890",
+      "city": "Boston",
+      "cuisine": "French",
+      "image": "french-restaurant.jpg",
+      "rating": 4.6
+    },
+    {
+      "id": 5,
+      "name": "Golden Dragon",
+      "address": "202 Noodle Road",
+      "phone": "555-567-8901",
+      "city": "San Francisco",
+      "cuisine": "Chinese",
+      "image": "chinese-restaurant.jpg",
+      "rating": 4.3
+    },
+    {
+      "id": 6,
+      "name": "Tandoori Nights",
+      "address": "303 Curry Circle",
+      "phone": "555-678-9012",
+      "city": "Houston",
+      "cuisine": "Indian",
+      "image": "indian-restaurant.jpg",
+      "rating": 4.4
+    },
+    {
+      "id": 7,
+      "name": "Athena's Plate",
+      "address": "404 Olive Way",
+      "phone": "555-789-0123",
+      "city": "Miami",
+      "cuisine": "Greek",
+      "image": "greek-restaurant.jpg",
+      "rating": 4.1
+    },
+    {
+      "id": 8,
+      "name": "Seoul Kitchen",
+      "address": "505 Kimchi Street",
+      "phone": "555-890-1234",
+      "city": "Seattle",
+      "cuisine": "Korean",
+      "image": "korean-restaurant.jpg",
+      "rating": 4.5
+    },
+    {
+      "id": 9,
+      "name": "Bangkok Spice",
+      "address": "606 Basil Avenue",
+      "phone": "555-901-2345",
+      "city": "Denver",
+      "cuisine": "Thai",
+      "image": "thai-restaurant.jpg",
+      "rating": 4.6
+    },
+    {
+      "id": 10,
+      "name": "Texas Smokehouse",
+      "address": "707 BBQ Road",
+      "phone": "555-012-3456",
+      "city": "Austin",
+      "cuisine": "American",
+      "image": "bbq-restaurant.jpg",
+      "rating": 4.8
+    },
+    {
+      "id": 11,
+      "name": "Casa de Tapas",
+      "address": "808 Sangria Lane",
+      "phone": "555-123-7890",
+      "city": "San Diego",
+      "cuisine": "Spanish",
+      "image": "spanish-restaurant.jpg",
+      "rating": 4.3
+    },
+    {
+      "id": 12,
+      "name": "Little Vietnam",
+      "address": "909 Pho Boulevard",
+      "phone": "555-234-8901",
+      "city": "Philadelphia",
+      "cuisine": "Vietnamese",
+      "image": "vietnamese-restaurant.jpg",
+      "rating": 4.4
+    },
+    {
+      "id": 13,
+      "name": "Marrakesh Nights",
+      "address": "1010 Couscous Street",
+      "phone": "555-345-9012",
+      "city": "Washington DC",
+      "cuisine": "Moroccan",
+      "image": "moroccan-restaurant.jpg",
+      "rating": 4.7
+    },
+    {
+      "id": 14,
+      "name": "Mama's Pasta",
+      "address": "1111 Alfredo Way",
+      "phone": "555-456-0123",
+      "city": "Las Vegas",
+      "cuisine": "Italian",
+      "image": "italian-restaurant2.jpg",
+      "rating": 4.2
+    },
+    {
+      "id": 15,
+      "name": "Sushi Heaven",
+      "address": "1212 Wasabi Avenue",
+      "phone": "555-567-1234",
+      "city": "Portland",
+      "cuisine": "Japanese",
+      "image": "sushi-restaurant2.jpg",
+      "rating": 4.9
+    },
+    {
+      "id": 16,
+      "name": "Burger Joint",
+      "address": "1313 Fry Street",
+      "phone": "555-678-2345",
+      "city": "Dallas",
+      "cuisine": "American",
+      "image": "burger-restaurant.jpg",
+      "rating": 4.0
+    },
+    {
+      "id": 17,
+      "name": "Curry House",
+      "address": "1414 Masala Road",
+      "phone": "555-789-3456",
+      "city": "Atlanta",
+      "cuisine": "Indian",
+      "image": "indian-restaurant2.jpg",
+      "rating": 4.5
+    },
+    {
+      "id": 18,
+      "name": "Gyro King",
+      "address": "1515 Feta Lane",
+      "phone": "555-890-4567",
+      "city": "Phoenix",
+      "cuisine": "Greek",
+      "image": "greek-restaurant2.jpg",
+      "rating": 4.3
+    },
+    {
+      "id": 19,
+      "name": "Peking Duck",
+      "address": "1616 Plum Street",
+      "phone": "555-901-5678",
+      "city": "San Jose",
+      "cuisine": "Chinese",
+      "image": "chinese-restaurant2.jpg",
+      "rating": 4.6
+    },
+    {
+      "id": 20,
+      "name": "Taco Fiesta",
+      "address": "1717 Guacamole Way",
+      "phone": "555-012-6789",
+      "city": "Orlando",
+      "cuisine": "Mexican",
+      "image": "mexican-restaurant2.jpg",
+      "rating": 4.1
+    }
+  ]

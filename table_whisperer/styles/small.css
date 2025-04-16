@@ -1,0 +1,97 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #3d405b;
+    background-color: #f4f1de;
+    margin: 0;
+}
+
+.header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu-toggle {
+    display: block;
+    align-self: flex-end;
+    background-color: #e07a5f;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background-color: #c86a52;
+    transform: scale(1.05);
+}
+
+.menu-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 4px 2px rgba(224, 122, 95, 0.5);
+}
+
+.navigation {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.navigation ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+.navigation li {
+    margin-left: 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.navigation li:last-child {
+    border-bottom: none;
+}
+
+.navigation a {
+    padding: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+}
+
+.restaurant-listings {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar {
+    margin-bottom: 1.5rem;
+}
+
+.footer-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-nav ul {
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.search-area .search-form {
+    padding: 1.5rem;
+}
+
+.search-area #button-row {
+    text-align: center;
+}

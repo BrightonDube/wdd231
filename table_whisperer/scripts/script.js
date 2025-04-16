@@ -31,247 +31,181 @@ if (modalDialog) {
   });
 }
 
-async function fetchData(endpoint, options = {}) {
-  options.credentials = 'include';
-
+// Helper function to load data from a JSON file
+async function loadFromFile(filePath) {
   try {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
-    if (response.status === 401) {
-      console.warn('Unauthorized access detected.');
-      return null;
-    }
+    const response = await fetch(filePath);
     if (!response.ok) {
-      let errorBody = null;
-      try {
-        errorBody = await response.json();
-      } catch (e) {}
-      const errorMessage =
-        errorBody?.message || `HTTP error! status: ${response.status}`;
-      throw new Error(errorMessage);
-    }
-    if (response.status === 204) {
-      return {};
+      throw new Error(`Failed to load ${filePath}: ${response.statusText}`);
     }
     return await response.json();
   } catch (error) {
-    console.error('Fetch error:', error);
-    showModal(`Error: ${error.message}`);
-    return null;
+    console.error(`Error loading file ${filePath}:`, error);
+    return [];
   }
 }
 
-async function updateAuthStatus() {
-  const authStatusDisplayElements = document.querySelectorAll('#auth-status');
-  const logoutButtonElements = document.querySelectorAll('#logout-button');
-  let isAuthenticated = false;
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/auth/status`, {
-      credentials: 'include'
-    });
-
-    if (!response.ok) {
-      if (response.status !== 401) {
-        console.error(`Auth status check failed: ${response.status}`);
-      }
-      isAuthenticated = false;
-    } else {
-      const data = await response.json();
-      isAuthenticated = data && data.isAuthenticated;
-
-      if (isAuthenticated) {
-        authStatusDisplayElements.forEach(element => {
-          if (element) element.textContent = `Logged in as ${data.user.email}`;
-        });
-      }
-    }
-  } catch (error) {
-    console.error('Error checking authentication status:', error);
-    isAuthenticated = false;
-  } finally {
-    authStatusDisplayElements.forEach(element => {
-      if (element && !isAuthenticated) {
-        const redirectUrl = encodeURIComponent(window.location.href);
-        element.innerHTML = `<a href="${API_BASE_URL}/auth/google">Login with Google</a>`;
-      }
-    });
-
-    logoutButtonElements.forEach(button => {
-      if (button)
-        button.style.display = isAuthenticated ? 'inline-block' : 'none';
-    });
-  }
-  return isAuthenticated;
+// Helper function to save data to a JSON file
+function saveToFile(filePath, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: 'application/json'
+  });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = filePath.split('/').pop(); // Extract the file name
+  link.click();
 }
 
-function logoutUser() {
-  const redirectUrl = encodeURIComponent(window.location.href);
-  window.location.href = `${API_BASE_URL}/auth/logout?redirect=${redirectUrl}`;
-}
+// Create a JSON variable with restaurant information
+let restaurant = {
+  name: 'The Gourmet Spot',
+  address: '123 Main Street, Sandown',
+  city: 'Sandton',
+  phone: '555-123-4567'
+};
 
-function displayRestaurantInfo(info) {
+// Display restaurant information from the `restaurant` variable
+function displayRestaurantInfo() {
   const infoDisplay = document.getElementById('restaurant-info-display');
-  const nameEdit = document.getElementById('restaurant-name-edit');
-  const addressEdit = document.getElementById('restaurant-address-edit');
-  const phoneEdit = document.getElementById('restaurant-phone-edit');
-
   if (infoDisplay) {
     infoDisplay.innerHTML = `
-            <h3>${info?.name || 'Restaurant Name Not Set'}</h3>
-            <p>Address: ${info?.address || 'No Address Provided'}</p>
-            <p>Phone: ${info?.phone || 'No Phone Provided'}</p>
-            <button id="edit-info-btn" class="action-button">Edit Info</button>
-        `;
-    const editBtn = document.getElementById('edit-info-btn');
-    const editSection = document.getElementById('restaurant-info-edit-page');
-    if (editBtn && editSection) {
-      editBtn.addEventListener('click', () => {
-        editSection.style.display =
-          editSection.style.display === 'none' ? 'block' : 'none';
-      });
-      editSection.style.display = 'none';
-    }
-  }
-  if (nameEdit) nameEdit.value = info?.name || '';
-  if (addressEdit) addressEdit.value = info?.address || '';
-  if (phoneEdit) phoneEdit.value = info?.phone || '';
-}
-
-async function loadRestaurantInfoDashboard() {
-  const info = await fetchData('/api/restaurant-info');
-  if (info) {
-    displayRestaurantInfo(info);
-  } else {
-    displayRestaurantInfo(null);
-    showModal(
-      'Could not load restaurant information. You might need to set it up.'
-    );
+      <h3>${restaurant.name || 'Restaurant Name Not Set'}</h3>
+      <p>Street Address: ${restaurant.address || 'No Address Provided'}</p>
+      <p>City: ${restaurant.city || 'No City Provided'}</p>
+      <p>Phone: ${restaurant.phone || 'No Phone Provided'}</p>
+    `;
   }
 }
 
+// Update restaurant information in the `restaurant` variable
 function setupUpdateRestaurantInfoForm() {
   const form = document.getElementById('edit-restaurant-info-form');
   if (form) {
-    form.addEventListener('submit', async function (event) {
+    form.addEventListener('submit', function (event) {
       event.preventDefault();
       const name = document.getElementById('restaurant-name-edit').value;
       const address = document.getElementById('restaurant-address-edit').value;
       const phone = document.getElementById('restaurant-phone-edit').value;
 
-      const updatedInfo = await fetchData('/api/restaurant-info', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, address, phone })
-      });
+      // Update the restaurant JSON variable
+      restaurant.name = name || restaurant.name;
+      restaurant.address = address || restaurant.address;
+      restaurant.phone = phone || restaurant.phone;
 
-      if (updatedInfo) {
-        showModal('Restaurant information updated successfully!');
-        displayRestaurantInfo(updatedInfo);
-        const editSection = document.getElementById(
-          'restaurant-info-edit-page'
-        );
-        if (editSection) editSection.style.display = 'none';
-      } else {
-        showModal('Failed to update restaurant information.');
-      }
+      // Display the updated restaurant info
+      displayRestaurantInfo();
+
+      // Show a success message
+      showModal('Restaurant information updated successfully!');
     });
   }
 }
 
+// Load and display tables from `data/tables.json`
 async function loadTablesDashboard() {
   const tablesList = document.getElementById('tables-list');
   if (!tablesList) return;
 
-  const tables = await fetchData('/api/tables');
-  if (tables && Array.isArray(tables)) {
-    if (tables.length > 0) {
-      tablesList.innerHTML =
-        '<ul>' +
-        tables
-          .map(
-            table => `
-                <li>
-                    ID: ${table._id || table.id} |
-                    <strong>Name:</strong> ${table.name} |
-                    <strong>Capacity:</strong> ${table.capacity} |
-                    <strong>Status:</strong> Available
-                </li>`
-          )
-          .join('') +
-        '</ul>';
-    } else {
-      tablesList.innerHTML =
-        '<p>No tables found. Add some using the form below.</p>';
-    }
+  const tables = await loadFromFile('data/tables.json');
+  if (tables.length > 0) {
+    tablesList.innerHTML =
+      '<ul>' +
+      tables
+        .map(
+          table => `
+            <li>
+              <strong>Table Number:</strong> ${table.tableNumber} |
+              <strong>Capacity:</strong> ${table.capacity} |
+              <strong>Location:</strong> ${table.location} |
+              <strong>Status:</strong> ${table.status}
+            </li>`
+        )
+        .join('') +
+      '</ul>';
   } else {
-    tablesList.innerHTML = '<p>Could not load tables.</p>';
+    tablesList.innerHTML =
+      '<p>No tables found. Add some using the form below.</p>';
   }
 }
 
+// Add a new table to `data/tables.json`
 function setupCreateTableForm() {
   const form = document.getElementById('create-table-form');
   if (form) {
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
-      const tableNameInput = document.getElementById('table-name');
+      const tableNumberInput = document.getElementById('table-number');
       const capacityInput = document.getElementById('capacity');
-      const tableName = tableNameInput.value;
-      const capacity = capacityInput.value;
+      const locationInput = document.getElementById('location');
+      const statusInput = document.getElementById('status');
 
-      if (!tableName || !capacity || parseInt(capacity) < 1) {
-        showModal(
-          'Please provide a valid table name and capacity (minimum 1).'
-        );
+      const tableNumber = tableNumberInput.value;
+      const capacity = capacityInput.value;
+      const location = locationInput.value;
+      const status = statusInput.value;
+
+      if (
+        !tableNumber ||
+        !capacity ||
+        parseInt(capacity) < 1 ||
+        !location ||
+        !status
+      ) {
+        showModal('Please provide valid table details.');
         return;
       }
 
-      const newTable = await fetchData('/api/tables', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: tableName, capacity: parseInt(capacity) })
-      });
+      const tables = await loadFromFile('data/tables.json');
+      const newTable = {
+        tableNumber: parseInt(tableNumber),
+        capacity: parseInt(capacity),
+        location: location,
+        status: status
+      };
+      tables.push(newTable);
 
-      if (newTable) {
-        showModal(`Table "${newTable.name}" created successfully!`);
-        loadTablesDashboard();
-        form.reset();
-      } else {
-        showModal('Failed to create table.');
-      }
+      // Save the updated tables to the JSON file
+      saveToFile('data/tables.json', tables);
+
+      showModal(`Table ${newTable.tableNumber} created successfully!`);
+      loadTablesDashboard();
+      form.reset();
     });
   }
 }
 
+// Load and display reservations from `data/reservations.json`
 async function loadReservationsDashboard() {
   const reservationsList = document.getElementById('reservations-list');
   if (!reservationsList) return;
 
-  const reservations = await fetchData('/api/reservations');
-  if (reservations && Array.isArray(reservations)) {
-    if (reservations.length > 0) {
-      reservationsList.innerHTML =
-        '<ul>' +
-        reservations
-          .map(
-            res => `
-                 <li>
-                     ID: ${res._id || res.id} |
-                     Table ID: ${res.tableId} |
-                     Guest: ${res.guestName} |
-                     Time: ${new Date(res.reservationTime).toLocaleString()} |
-                     Party Size: ${res.partySize}
-                 </li>`
-          )
-          .join('') +
-        '</ul>';
-    } else {
-      reservationsList.innerHTML = '<p>No reservations found.</p>';
-    }
+  const reservations = await loadFromFile('data/reservations.json');
+  if (reservations.length > 0) {
+    reservationsList.innerHTML =
+      '<ul>' +
+      reservations
+        .map(
+          res => `
+            <li>
+              <strong>ID:</strong> ${res.id} <br>
+              <strong>Table Number:</strong> ${res.tableNumber} <br>
+              <strong>Customer Name:</strong> ${res.customerName} <br>
+              <strong>Phone:</strong> ${res.customerPhone} <br>
+              <strong>Email:</strong> ${res.customerEmail} <br>
+              <strong>Reservation Date & Time:</strong> ${new Date(res.reservationDateTime).toLocaleString()} <br>
+              <strong>Party Size:</strong> ${res.partySize} <br>
+              <strong>Status:</strong> ${res.status} <br>
+              <strong>Notes:</strong> ${res.notes || 'None'} <br>
+            </li>`
+        )
+        .join('') +
+      '</ul>';
   } else {
-    reservationsList.innerHTML = '<p>Could not load reservations.</p>';
+    reservationsList.innerHTML = '<p>No reservations found.</p>';
   }
 }
 
+// Add a new reservation to `data/reservations.json`
 function setupCreateReservationForm() {
   const form = document.getElementById('create-reservation-form');
   if (form) {
@@ -298,28 +232,24 @@ function setupCreateReservationForm() {
         return;
       }
 
-      const newReservation = await fetchData('/api/reservations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          tableId: tableId,
-          guestName: guestName,
-          reservationTime: reservationTime,
-          partySize: parseInt(partySize)
-        })
-      });
+      const reservations = await loadFromFile('data/reservations.json');
+      const newReservation = {
+        id: reservations.length + 1,
+        tableId: parseInt(tableId),
+        guestName: guestName,
+        reservationTime: reservationTime,
+        partySize: parseInt(partySize)
+      };
+      reservations.push(newReservation);
 
-      if (newReservation) {
-        showModal(
-          `Reservation for "${newReservation.guestName}" created successfully!`
-        );
-        loadReservationsDashboard();
-        form.reset();
-      } else {
-        showModal(
-          'Failed to create reservation. Check table ID and availability.'
-        );
-      }
+      // Save the updated reservations to the JSON file
+      saveToFile('data/reservations.json', reservations);
+
+      showModal(
+        `Reservation for "${newReservation.guestName}" created successfully!`
+      );
+      loadReservationsDashboard();
+      form.reset();
     });
   }
 }
@@ -330,35 +260,20 @@ const navigation = document.querySelector('.navigation');
 if (menuToggle && navigation) {
   menuToggle.addEventListener('click', function () {
     navigation.classList.toggle('active');
-    menuToggle.textContent = navigation.classList.contains('active')
-      ? '✕'
-      : '☰';
   });
 } else {
   console.warn('Menu toggle button or navigation list not found.');
 }
 
+// Initialize the dashboard
 document.addEventListener('DOMContentLoaded', async () => {
-  const isAuthenticated = await updateAuthStatus();
-
-  const logoutButtonElements = document.querySelectorAll('#logout-button');
-  logoutButtonElements.forEach(button => {
-    if (button) button.addEventListener('click', logoutUser);
-  });
-
   const dashboardContent = document.getElementById('dashboard-content');
   const homeSearchForm = document.getElementById('home-search-form');
   const aboutContent = document.querySelector('.about-content');
 
   if (dashboardContent) {
-    if (!isAuthenticated) {
-      showModal('Please log in to access the dashboard.');
-      window.location.href = 'index.html';
-      return;
-    }
-
     dashboardContent.style.display = 'block';
-    await loadRestaurantInfoDashboard();
+    displayRestaurantInfo();
     await loadTablesDashboard();
     await loadReservationsDashboard();
 
@@ -369,5 +284,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('Home page loaded');
   } else if (aboutContent) {
     console.log('About page loaded');
+  }
+
+  const contactLink = document.querySelector('.about-content a[href="#"]');
+  const contactModal = document.getElementById('contact-modal');
+  const closeContactModal = document.getElementById('close-contact-modal');
+
+  // Open the contact modal
+  contactLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      contactModal.style.display = 'flex';
+  });
+
+  // Close the contact modal
+  closeContactModal.addEventListener('click', () => {
+      contactModal.style.display = 'none';
+  });
+
+  // Close the modal when clicking outside the modal content
+  window.addEventListener('click', (event) => {
+      if (event.target === contactModal) {
+          contactModal.style.display = 'none';
+      }
+  });
+
+  const contactLinks = document.querySelectorAll('a[href="#"]:not([id])'); // Select all <a href="#"> without an id
+
+  if (contactModal && closeContactModal && contactLinks.length > 0) {
+    contactLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        contactModal.style.display = 'flex';
+      });
+    });
+
+    closeContactModal.addEventListener('click', () => {
+      contactModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === contactModal) {
+        contactModal.style.display = 'none';
+      }
+    });
   }
 });

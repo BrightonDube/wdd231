@@ -7,7 +7,7 @@
     <meta name="description"
         content="Table Whisperer - Restaurant Reservation System. Easily manage tables and reservations.">
     <meta name="author" content="Brighton Dube">
-    <title>Table Whisperer - Restaurant Reservations</title>
+    <title>Table Whisperer - About us</title>
     <link rel="styleshee" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -29,18 +29,17 @@
 
     <header class="header">
         <div class="logo">Table Whisperer</div>
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            ☰
+        </button>
         <nav class="navigation" aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="about.html" class="active-nav">About</a></li>
-                <li id="auth-status"></li>
-                <li><button id="logout-button" style="display:none;">Logout</button></li>
+                <li><a href="about.html" class="active-nav">About</a></li>                
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Toggle Navigation">
-            ☰
-        </button>
+       
     </header>
 
     <main class="main-content">
@@ -85,7 +84,26 @@
             </div>
         </div>
     </div>
-    <script src="scripts/script.js" type="module"></script>
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-contact-modal">×</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                <button type="submit" class="action-button primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
 </body>
 
 </html>

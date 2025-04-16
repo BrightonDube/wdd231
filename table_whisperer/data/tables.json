@@ -1,0 +1,182 @@
+[
+    {
+      "tableNumber": 1,
+      "capacity": 2,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 2,
+      "capacity": 2,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 3,
+      "capacity": 4,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 4,
+      "capacity": 4,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 5,
+      "capacity": 6,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 6,
+      "capacity": 6,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 7,
+      "capacity": 8,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 8,
+      "capacity": 2,
+      "location": "smoking",
+      "status": "available"
+    },
+    {
+      "tableNumber": 9,
+      "capacity": 4,
+      "location": "smoking",
+      "status": "available"
+    },
+    {
+      "tableNumber": 10,
+      "capacity": 6,
+      "location": "smoking",
+      "status": "available"
+    },
+    {
+      "tableNumber": 11,
+      "capacity": 2,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 12,
+      "capacity": 2,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 13,
+      "capacity": 4,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 14,
+      "capacity": 4,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 15,
+      "capacity": 6,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 16,
+      "capacity": 6,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 17,
+      "capacity": 8,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 18,
+      "capacity": 2,
+      "location": "smoking",
+      "status": "available"
+    },
+    {
+      "tableNumber": 19,
+      "capacity": 4,
+      "location": "smoking",
+      "status": "available"
+    },
+    {
+      "tableNumber": 20,
+      "capacity": 6,
+      "location": "smoking",
+      "status": "available"
+    },
+    {
+      "tableNumber": 21,
+      "capacity": 10,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 22,
+      "capacity": 12,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 23,
+      "capacity": 2,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 24,
+      "capacity": 2,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 25,
+      "capacity": 4,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 26,
+      "capacity": 4,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 27,
+      "capacity": 6,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 28,
+      "capacity": 6,
+      "location": "patio",
+      "status": "available"
+    },
+    {
+      "tableNumber": 29,
+      "capacity": 8,
+      "location": "inside",
+      "status": "available"
+    },
+    {
+      "tableNumber": 30,
+      "capacity": 10,
+      "location": "patio",
+      "status": "available"
+    }
+  ]

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,15 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Table Whisperer">
     <meta name="twitter:title" content="Table Whisperer - Restaurant Reservations">
-    <meta name="twitter:description" content="Effortlessly manage your restaurant's tables and reservations with Table Whisperer.">
+    <meta name="twitter:description"
+        content="Effortlessly manage your restaurant's tables and reservations with Table Whisperer.">
     <meta name="twitter:image" content="url-to-your-site-logo.png">
-    <title>Table Whisperer - Restaurant Reservations</title>
+    <title>Table Whisperer - Home</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
+    <!-- <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="styles/medium.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 1025px)"> -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -30,28 +35,29 @@
 
     <script src="scripts/script.js" type="module" defer>  </script>
 </head>
+
 <body>
 
     <header class="header">
-        <div class="logo">Table Whisperer</div>
+        <div class="logo">Table Whisperer </div>
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            ☰
+        </button>
         <nav class="navigation" aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html" class="active-nav" aria-current="page">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="about.html">About</a></li>
-                <li id="auth-status"></li>
-                <li><button id="logout-button" style="display:none;">Logout</button></li>
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Toggle Navigation">
-            ☰
-        </button>
+
     </header>
 
     <main class="main-content">
         <h1 class="page-title">Welcome to Table Whisperer</h1>
         <section class="hero-section">
-            <p class="hero-text">Find and book the perfect table for any occasion. Discover restaurants near you and make reservations effortlessly.</p>
+            <p class="hero-text">Find and book the perfect table for any occasion. Discover restaurants near you and
+                make reservations effortlessly.</p>
         </section>
 
         <section id="search-area" class="search-area">
@@ -107,11 +113,29 @@
                     <li><a href="attributions.html" target="blank">Attributions</a></li>
                     <li><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a></li>
                     <li><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="./about.html#">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
-    <script src="scripts/script.js" type="module"></script>
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-contact-modal">×</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                <button type="submit" class="action-button primary">Send Message</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

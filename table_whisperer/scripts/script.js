@@ -1,3 +1,4 @@
+import { hideModal } from './modal.js';
 const API_BASE_URL = 'https://tableresapi.onrender.com';
 
 const modalDialog = document.getElementById('modal-dialog');
@@ -11,12 +12,6 @@ function showModal(message) {
   } else {
     console.warn('Modal elements not found. Cannot show modal:', message);
     alert(message);
-  }
-}
-
-function hideModal() {
-  if (modalDialog) {
-    modalDialog.style.display = 'none';
   }
 }
 

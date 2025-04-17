@@ -40,7 +40,7 @@
 
     <header class="header">
         <div class="logo">Table Whisperer </div>
-        <button class="menu-toggle" aria-label="Toggle Navigation">
+        <button class="menu-toggle" aria-label="Open Navigation Menu">
             ☰
         </button>
         <nav class="navigation" aria-label="Main Navigation">
@@ -97,14 +97,17 @@
                     </div>
 
                     <div class="form-row" id="button-row">
-                        <button type="submit" class="action-button primary">Search Restaurants</button>
+                        <button type="submit" class="action-button primary" aria-label="Search for Restaurants">Search Restaurants</button>
                     </div>
                 </div>
             </form>
         </section>
         <section id="restaurant-listings" class="restaurant-listings">
             <h2>Restaurants in Johannesburg</h2>
-            <div class="restaurants-grid"></div>
+            <div class="restaurants-grid">
+                <img src="images/aurum.webp" alt="Aurum Restaurant - Italian Cuisine">
+                <img src="images/bullrun.webp" alt="Bull Run - Steakhouse">
+            </div>
           </section>
 
     </main>
@@ -124,19 +127,19 @@
     </footer>
     <div id="contact-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" id="close-contact-modal">×</span>
+            <span class="close-button" id="close-contact-modal" aria-label="Close Contact Modal">×</span>
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Enter your name">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Enter your email address">
 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-label="Enter your message"></textarea>
 
-                <button type="submit" class="action-button primary">Send Message</button>
+                <button type="submit" class="action-button primary" aria-label="Send your message">Send Message</button>
             </form>
         </div>
     </div>

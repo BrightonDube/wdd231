@@ -376,4 +376,35 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   loadRestaurants();
+  
+
+  function handleLastVisit() {
+    const lastVisitKey = 'lastVisit';
+    const now = new Date();
+
+   
+    const lastVisit = localStorage.getItem(lastVisitKey);
+
+    
+    if (lastVisit) {
+      const lastVisitDate = new Date(lastVisit);
+      const message = `
+        Welcome back! Your last visit was on 
+        ${lastVisitDate.toLocaleDateString()} at ${lastVisitDate.toLocaleTimeString()}.
+      `;
+      showModal(message);
+    } else {
+      
+      showModal('Welcome to Table Whisperer! This is your first visit.');
+    }
+
+    
+    localStorage.setItem(lastVisitKey, now.toISOString());
+  }
+
+  
+  const isIndexPage = document.querySelector('.restaurants-grid'); 
+  if (isIndexPage) {
+    handleLastVisit();
+  }
 });

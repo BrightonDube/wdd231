@@ -290,23 +290,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   const contactModal = document.getElementById('contact-modal');
   const closeContactModal = document.getElementById('close-contact-modal');
 
-  // Open the contact modal
-  contactLink.addEventListener('click', event => {
-    event.preventDefault();
-    contactModal.style.display = 'flex';
-  });
+  if (contactLink && contactModal && closeContactModal) {
+    contactLink.addEventListener('click', event => {
+      event.preventDefault();
+      contactModal.style.display = 'flex';
+    });
 
-  // Close the contact modal
-  closeContactModal.addEventListener('click', () => {
-    contactModal.style.display = 'none';
-  });
-
-  // Close the modal when clicking outside the modal content
-  window.addEventListener('click', event => {
-    if (event.target === contactModal) {
+    closeContactModal.addEventListener('click', () => {
       contactModal.style.display = 'none';
-    }
-  });
+    });
+
+    window.addEventListener('click', event => {
+      if (event.target === contactModal) {
+        contactModal.style.display = 'none';
+      }
+    });
+  }
 
   const contactLinks = document.querySelectorAll('a[href="#"]:not([id])'); // Select all <a href="#"> without an id
 
@@ -351,4 +350,30 @@ document.addEventListener('DOMContentLoaded', async () => {
       contactForm.reset();
     });
   }
+
+  // Example: Load restaurants from a local JSON file
+  async function loadRestaurants() {
+    const response = await fetch('data/restaurants.json');
+    const restaurants = await response.json();
+
+    const grid = document.querySelector('.restaurants-grid');
+    if (!grid) return;
+
+    grid.innerHTML = restaurants.map(r => `
+      <div class="restaurant-card">
+        <img src="images/${r.image}" alt="${r.name}" class="restaurant-img" loading="lazy" />
+        <div class="restaurant-info">
+          <h3 class="restaurant-name">${r.name}</h3>
+          <div class="restaurant-meta">
+            <span class="restaurant-cuisine">${r.cuisine}</span>
+            <span class="restaurant-rating">⭐ ${r.rating}</span>
+          </div>
+          <div class="restaurant-address">${r.address}</div>
+          <div class="restaurant-phone">${r.phone}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  loadRestaurants();
 });

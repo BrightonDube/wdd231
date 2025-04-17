@@ -27,7 +27,7 @@
 
     <header class="header">
         <div class="logo">Table Whisperer</div>
-        <button class="menu-toggle" aria-label="Toggle Navigation">
+        <button class="menu-toggle" aria-label="Toggle Navigation Menu">
             ☰
         </button>
         <nav class="navigation" aria-label="Main Navigation">
@@ -136,7 +136,7 @@
     </div>
     <div id="contact-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" id="close-contact-modal">×</span>
+            <span class="close-button" id="close-contact-modal" aria-label="Close Contact Modal">×</span>
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <label for="name">Name:</label>
@@ -150,6 +150,8 @@
 
                 <button type="submit" class="action-button primary">Send Message</button>
             </form>
+            <h2 id="contact-heading">Contact Us</h2>
+            <button class="action-button" aria-labelledby="contact-heading">Send Message</button>
         </div>
     </div>
 </body>
